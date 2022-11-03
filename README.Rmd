@@ -33,3 +33,4 @@ devtools::install_github("g-rade/lifetables")
 
   + [Grace Rade](https://github.com/g-rade)
   + [Maeve Tyler-Penny](https://github.com/mctp546)
+  + [Julia Ting](https://github.com/jtingy)
