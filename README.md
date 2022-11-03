@@ -21,3 +21,4 @@ devtools::install_github("g-rade/lifetables")
 ## Contributors
 
 -   [Grace Rade](https://github.com/g-rade)
+-   [Maeve Tyler-Penny](https://github.com/mctp546)
