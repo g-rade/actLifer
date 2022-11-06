@@ -16,8 +16,13 @@ central_death_rate <- function(data, age, pop, deaths, ...){
     mutate(CentralDeathRate = (deaths/pop))
 }
 
-conditional_death_prob <- function (data, age, pop, deaths, ...){
+conditional_death_prob <- function(data, age, pop, deaths, ...){
   data %>%
     group_by(age, ...) %>%
+    mutate(ConditionalProbDeath = (deaths/(pop + (2*deaths))))
+}
 
+conditional_life_prob <- function(data, age, pop, deaths, ...){
+  data %>%
+    mutate(ConditionalProbLife = (1 - conditional_death_prob()))
 }
