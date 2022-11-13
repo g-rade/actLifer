@@ -5,7 +5,7 @@
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
 #' @param ... Other optional grouping variables (can be race, gender, etc.)
-#'
+#' @import dplyr
 #' @return
 #' @export
 #'
@@ -17,12 +17,36 @@ central_death_rate <- function(data, age, pop, deaths, ...){
 }
 
 
+#' Conditional Probability of Death at Age x
+#'
+#' @param data The mortality dataset, includes an age grouping variable
+#' @param age The age grouping variable, must be cateogrical
+#' @param pop Population of each age group, must be numeric
+#' @param deaths The number of deaths at each age group, must be numeric
+#' @param ... Optional other categorical grouping variables (race, sex, etc.)
+#' @import dplyr
+#' @return
+#' @export
+#'
+#' @examples
 conditional_death_prob <- function(data, age, pop, deaths, ...){
   data %>%
     group_by(age, ...) %>%
     mutate(ConditionalProbDeath = (deaths/(pop + (2*deaths))))
   }
 
+#' Conditional Probability of Survival at Age x
+#'
+#' @param data The mortality dataset, includes an age grouping variable
+#' @param age The age grouping variable, must be cateogrical
+#' @param pop Population of each age group, must be numeric
+#' @param deaths The number of deaths at each age group, must be numeric
+#' @param ... Optional other categorical grouping variables (race, sex, etc.)
+#' @import dplyr
+#' @return
+#' @export
+#'
+#' @examples
 conditional_life_prob <- function(data, age, pop, deaths, ...){
   data %>%
     conditional_death_prob %>%
