@@ -4,10 +4,13 @@
 \alias{makes_lifetable}
 \title{Making the lifetable}
 \usage{
-makes_lifetable(df, age, pop, deaths)
+makes_lifetable(df, age, deaths, pop)
 }
 \arguments{
 \item{deaths}{}
+}
+\value{
+lifetable
 }
 \description{
 Making the lifetable
