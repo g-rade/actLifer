@@ -62,3 +62,4 @@ makes_lifetable <- function(df, age, pop, deaths) {
            cp_death = cp_death(),
            cp_survival = cp_survival())
 }
+
