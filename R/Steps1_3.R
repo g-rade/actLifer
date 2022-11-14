@@ -11,6 +11,9 @@
 #'
 #' @examples
 central_death_rate <- function(data, age, pop, deaths, ...){
+  age <- age
+  pop <- population
+  deaths <- deaths
   data %>%
     group_by(age, ...) %>%
     mutate(CentralDeathRate = (deaths/pop))
