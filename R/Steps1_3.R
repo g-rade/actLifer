@@ -11,14 +11,12 @@
 #'
 #' @examples
 central_death_rate <- function(data, age, pop, deaths, ...){
-  age <- age
-  pop <- population
-  deaths <- deaths
+  CentralDeathRate <- NULL
+  data <- data
   data %>%
-    group_by(age, ...) %>%
+    group_by(...) %>%
     mutate(CentralDeathRate = (deaths/pop))
 }
-
 
 #' Conditional Probability of Death at Age x
 #'
@@ -33,6 +31,7 @@ central_death_rate <- function(data, age, pop, deaths, ...){
 #'
 #' @examples
 conditional_death_prob <- function(data, age, pop, deaths, ...){
+  ConditionalProbDeath <- NULL
   data %>%
     group_by(age, ...) %>%
     mutate(ConditionalProbDeath = (deaths/(pop + (2*deaths))))
@@ -51,6 +50,7 @@ conditional_death_prob <- function(data, age, pop, deaths, ...){
 #'
 #' @examples
 conditional_life_prob <- function(data, age, pop, deaths, ...){
+  ConditionalProbLife <- NULL
   data %>%
     conditional_death_prob %>%
     mutate(ConditionalProbLife = (1 - ConditionalProbDeath))
