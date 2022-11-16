@@ -4,12 +4,12 @@
 \alias{central_death_rt}
 \title{Central Death Rate}
 \usage{
-central_death_rt(D, P)
+central_death_rt(P, D)
 }
 \arguments{
-\item{D}{deaths/age group}
-
 \item{P}{population/age group}
+
+\item{D}{deaths/age group}
 }
 \value{
 central death rate

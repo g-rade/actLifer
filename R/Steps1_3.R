@@ -9,9 +9,8 @@
 #' @export
 #'
 #' @examples central_death_rt(10,100)
-central_death_rt <- function(D, P) {
-  rt = D/P
-  return (rt)
+central_death_rt <- function(P, D) {
+  return (D/P)
 }
 
 #' Conditional probability of death
@@ -25,7 +24,7 @@ central_death_rt <- function(D, P) {
 #' @export
 #'
 #' @examples
-c_pdeath <- function(D, P) {
+c_pdeath <- function(P, D) {
   return (D/(P+0.5*D))
 }
 

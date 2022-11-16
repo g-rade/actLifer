@@ -4,12 +4,12 @@
 \alias{c_pdeath}
 \title{Conditional probability of death}
 \usage{
-c_pdeath(D, P)
+c_pdeath(P, D)
 }
 \arguments{
-\item{D}{deaths/age group}
-
 \item{P}{population/age group}
+
+\item{D}{deaths/age group}
 }
 \value{
 conditional probability of death
