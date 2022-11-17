@@ -1,84 +1,61 @@
-#' Central death rate
+
+utils::globalVariables(c("ConditionalProbDeath", "ConditionalProbLife"))
+
+#' Central Death Rate
 #'
-#' @param df Data frame
-#' @param age Age groups - column of data frame
-#' @param deaths Number of deaths in each age group - column of a data frame
-#' @param pop Population of each age group - column of a data frame
-#'
-#' @return Death rate (double)
-#' @export
+#' @param data The mortality dataset, includes an age grouping variable,
+#' @param age The age grouping variable, must be categorical
+#' @param pop Population of each age group, must be numeric
+#' @param deaths The midyear number of deaths at each age group, must be numeric
+#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
-#' @examples
-death_rate <- function(df, age, deaths, pop) {
-  return(deaths/pop)
-}
-
-#' Conditional probability of death
-#'
-#' @param df Data frame
-#' @param age Age groups - column of data frame
-#' @param deaths Number of deaths in each age group - column of a data frame
-#' @param pop Population of each age group - column of a data frame
-#'
-#' @return conditional probability of death (double)
-#' @export
-#'
-#' @examples
-cp_death <- function(df, age, deaths, pop) {
-  return(deaths/(pop + 0.5*deaths))
-}
-
-
-#' Conditional probability of survival
-#'
-#' @param df Data frame
-#' @param age Age groups - column of data frame
-#' @param deaths Number of deaths in each age group - column of a data frame
-#' @param pop Population of each age group - column of a data frame
-#'
-#' @return conditional probability of survival (double)
-#' @export
-#'
-#' @examples
-cp_survival <- function(df, age, deaths, pop) {
-  df <- df %>%
-    mutate(cp_survival = 1 - (deaths/(pop + 0.5*deaths)))
-}
-
-#' Number surviving to age x
-#'
-#' @param df
-#' @param age
-#' @param deaths
-#' @param pop
-#' @param cp_death
-#'
 #' @return
 #' @export
 #'
 #' @examples
-survive_to_age <- function(df, age, deaths, pop, ...) {
-  df <- df %>%
-    mutate(surviving_to_age_x = ifelse(row_number() == 0, 100000, cp_survival*lag(survive_to_age(df, age, deaths, pop))))
+central_death_rate <- function(data, age, pop, deaths, ...){
+  CentralDeathRate <- NULL
+  data <- data
+  data %>%
+    group_by(...) %>%
+    mutate(CentralDeathRate = (data$deaths/data$pop))
 }
 
-#' Making the lifetable
+#' Conditional Probability of Death at Age x
 #'
-#' @param df
-#' @param age
-#' @param pop
-#' @param deaths
-#'
-#' @return lifetable
-#' @export
+#' @param data The mortality dataset, includes an age grouping variable
+#' @param age The age grouping variable, must be cateogrical
+#' @param pop Population of each age group, must be numeric
+#' @param deaths The number of deaths at each age group, must be numeric
+#' @param ... Optional other categorical grouping variables (race, sex, etc.)
 #' @import dplyr
+#' @return
+#' @export
+#'
 #' @examples
-makes_lifetable <- function(df, age, deaths, pop) {
-  lifetable <- df %>%
-    mutate(death_rate = death_rate(df, age, deaths, pop),
-           cp_death = cp_death(df, age, deaths, pop),
-           cp_survival = cp_survival(df, age, deaths, pop),
-           survive_to_age = survive_to_age(df, age, deaths, pop))
-  return(lifetable)
+conditional_death_prob <- function(data, age, pop, deaths, ...){
+  ConditionalProbDeath <- NULL
+  data %>%
+    group_by(...) %>%
+    mutate(ConditionalProbDeath = (data$deaths/(data$pop + (2*data$deaths))))
+  }
+
+#' Conditional Probability of Survival at Age x
+#'
+#' @param data The mortality dataset, includes an age grouping variable
+#' @param age The age grouping variable, must be cateogrical
+#' @param pop Population of each age group, must be numeric
+#' @param deaths The number of deaths at each age group, must be numeric
+#' @param ... Optional other categorical grouping variables (race, sex, etc.)
+#' @import dplyr
+#' @return
+#' @export
+#'
+#' @examples
+conditional_life_prob <- function(data, age, pop, deaths, ...){
+  ConditionalProbLife <- NULL
+  data %>%
+    conditional_death_prob() %>%
+    mutate(ConditionalProbLife = (1 - ConditionalProbDeath))
 }
 
