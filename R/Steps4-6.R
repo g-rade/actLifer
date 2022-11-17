@@ -14,7 +14,8 @@ number_to_survive <- function(data, age, pop, deaths, ...){
   NumberToSurvive <- NULL
   data %>%
     conditional_life_prob() %>%
-    mutate(NumberToSurvive = ifelse(row_number()==1, 100000, lag(NumberToSurvive)*lag(ConditionalProbLife)))
+    mutate(NumberToSurvive = if_else(row_number()==1, 100000, 0)) %>%
+    mutate(NumberToSurvive = if_else(NumberToSurvive != 100000, lag(NumberToSurvive)*lag(ConditionalProbLife), 100000))
 }
 
 #' Proportion to Survive to Age x
@@ -34,4 +35,10 @@ prop_to_survive <- function(data, age, pop, deaths, ...){
   data %>%
     number_to_survive() %>%
     mutate(PropToSurvive = NumberToSurvive/100000)
+}
+
+person_years <- function(data, age, pop, deaths, ...){
+  data %>%
+    prop_to_survive() %>%
+    mutate(PersonYears = mean(NumberToSurvive, lead(NumberToSurvive)))
 }
