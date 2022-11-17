@@ -1,25 +1,49 @@
-#' Title
+#' Number Surviving to Age X (lx)
 #'
-#' @param df
+#' Calculates number of people surviving in each age group
+#'
+#' @param data
 #' @param age
-#' @param cond_p_survive
+#' @param pop
+#' @param deaths
+#' @param ...
+#'
+#' @return original data frame with added columns
+#' @export
+#' @import dplyr
+#'
+#' @examples
+num_suriving_to_age_x <- function(data, age, pop, deaths, ...) {
+  ### doing the previous steps for the df
+  data <- conditional_life_prob({{data}}, {{age}}, {{pop}}, {{deaths}})
+  ### Adding first entry to number surviving to age x column
+  data %>%
+    mutate(NumToSurvive = if_else(row_number() ==1 , 100000, 100000*lag(cumprod(CondProbLife))))
+
+  data
+}
+
+#' Proportion Surviving To Age X
+#'
+#' Calculates the proportion of the
+#'
+#' @param data
+#' @param age
+#' @param pop
+#' @param deaths
+#' @param ...
 #'
 #' @return
 #' @export
 #' @import dplyr
 #'
 #' @examples
-num_survive_to_age <- function(cond_p_survive) {
-  ### Adding first entry to number surviving to age x column
- num_survive <- c(100000)
- for (i in 1:length(cond_p_survive)-1) {
-   num_survive <- c(num_survive, num_survive[i]*cond_p_survive[i])
-   print(num_survive)
- }
- num_survive
-}
+prop_survive_to_age_x <- function(data, age, pop, deaths, ...) {
+  ### doing the previous steps for the df
+  data <- num_suriving_to_age_x({{data}}, {{age}}, {{pop}}, {{deaths}})
+  data %>%
+    mutate(PropSurvivingToAge = (data$NumSurivivingToAge/10000))
 
-prop_survive_to_age <- function(num_survive) {
-  return (num_survive/100000)
+  return (data)
 }
 
