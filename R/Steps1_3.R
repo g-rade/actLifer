@@ -53,3 +53,4 @@ conditional_life_prob <- function(data, age, pop, deaths, ...){
     conditional_death_prob() %>%
     mutate(ConditionalProbLife = (1 - ConditionalProbDeath))
 }
+
