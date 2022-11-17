@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #' Central Death Rate
 #'
 #' @param data The mortality dataset, includes an age grouping variable,
