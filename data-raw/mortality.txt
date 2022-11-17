@@ -1,0 +1,54 @@
+"Notes"	"Age Group"	"Age Group Code"	Deaths	Population	Crude Rate
+	"< 1 year"	"1"	473582	71608191	661.4
+	"1-4 years"	"1-4"	81901	285248834	28.7
+	"5-9 years"	"5-9"	48723	362202810	13.5
+	"10-14 years"	"10-14"	61902	374876333	16.5
+	"15-19 years"	"15-19"	218296	382546894	57.1
+	"20-24 years"	"20-24"	350417	381783539	91.8
+	"25-34 years"	"25-34"	791320	737039056	107.4
+	"35-44 years"	"35-44"	1435697	765338694	187.6
+	"45-54 years"	"45-54"	3183168	762328534	417.6
+	"55-64 years"	"55-64"	5322711	597304339	891.1
+	"65-74 years"	"65-74"	7728834	386249748	2001.0
+	"75-84 years"	"75-84"	11880147	235982089	5034.3
+	"85+ years"	"85+"	13334134	93237328	14301.3
+	"Not Stated"	"NS"	4234	Not Applicable	Not Applicable
+"Total"			44915066	5435746389	826.3
+"---"
+"Dataset: Compressed Mortality, 1999-2016"
+"Query Parameters:"
+"Group By: Age Group"
+"Show Totals: True"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/cmf.html for more information."
+"---"
+"Query Date: Nov 10, 2022 9:53:58 AM"
+"---"
+"Suggested Citation: Centers for Disease Control and Prevention, National Center for Health Statistics. National Vital Statistics"
+"System, Mortality: Compressed Mortality File 1999-2016 on CDC WONDER Online Database, released June 2017. Data are from the"
+"Compressed Mortality File 1999-2016 Series 20 No. 2U, 2016, as compiled from data provided by the 57 vital statistics"
+"jurisdictions through the Vital Statistics Cooperative Program. Accessed at http://wonder.cdc.gov/cmf-icd10.html on Nov 10, 2022"
+"9:53:58 AM"
+"---"
+Caveats:
+"1. About national population figures: population figures for 1999 are from the 1990-1999 series of bridged-race intercensal"
+"estimates of the July 1 resident population; population figures for 2000 and 2010 are bridged-race April 1 census counts;"
+"population figures for 2001-2009 are from the revised 2000-2009 series of bridged-race intercensal estimates of the July 1"
+"resident population; population figures for 2011 are bridged-race postcensal estimates of the July 1 resident population, from"
+"the Vintage 2011 series released by NCHS on July 18, 2012; population figures for 2012 are bridged-race postcensal estimates of"
+"the July 1 resident population, from the Vintage 2012 series released by NCHS on June 13, 2013; population figures for 2013 are"
+"bridged-race postcensal estimates of the July 1 resident population, from the Vintage 2013 series released by NCHS on June 26,"
+"2014; population figures for 2014 are bridged-race postcensal estimates of the July 1 resident population, from the Vintage 2014"
+"series released by NCHS on June 30, 2015. and population figures for 2015 are bridged-race postcensal estimates of the July 1"
+"resident population, from the Vintage 2015 series released by NCHS on June 28, 2016. More information:"
+"http://wonder.cdc.gov/wonder/help/cmf.html#Population Information."
+"2. The population figures used in the calculation of death rates for the age group 'under 1 year' are the estimates of the"
+"resident population that is under one year of age. More information: http://wonder.cdc.gov/wonder/help/cmf.html#Age Group."
+"3. Deaths of persons with Age ""Not Stated"" are included in ""All"" counts and rates, but are not distributed among age groups,"
+"so are not included in age-specific counts, age-specific rates or in any age-adjusted rates. More information:"
+"http://wonder.cdc.gov/wonder/help/cmf.html#Not Stated."
+"4. As of April 3, 2017, the underlying cause of death has been revised for 125 deaths in 2014. More information:"
+"http://wonder.cdc.gov/wonder/help/cmf.html#2014-Revision."
