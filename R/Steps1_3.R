@@ -1,6 +1,3 @@
-
-utils::globalVariables(c("ConditionalProbDeath", "ConditionalProbLife"))
-
 #' Central Death Rate
 #'
 #' @param data The mortality dataset, includes an age grouping variable,
@@ -14,8 +11,6 @@ utils::globalVariables(c("ConditionalProbDeath", "ConditionalProbLife"))
 #'
 #' @examples
 central_death_rate <- function(data, age, pop, deaths, ...){
-  CentralDeathRate <- NULL
-  data <- data
   data %>%
     group_by(...) %>%
     mutate(CentralDeathRate = (data$deaths/data$pop))
