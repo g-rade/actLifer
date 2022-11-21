@@ -11,13 +11,13 @@
 #' @param deaths The midyear number of deaths at each age group, must be numeric
 #' @param includeAllSteps If false, will only include the proportion surviving to age x and life expectancy for age x
 #' @param includeCDR If true, will include the central death rate for each age group
-#' @param includeCPS If true, will include the proportion surviving for each age group
+#' @param includePS If true, will include the proportion surviving for each age group
 #' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
-#' @return
+#' @return Lifetable
 #' @export
 #'
-#' @examples
+#' @examples lifetable(mortality, age_group, population, deaths, FALSE, TRUE, TRUE)
 lifetable <- function(data, age, pop, deaths, includeAllSteps=TRUE, includeCDR=TRUE, includePS=TRUE, ...) {
   data <- data %>%
     mutate(CentralDeathRate = (data$deaths/data$pop)) %>%

@@ -28,12 +28,18 @@ lifetable(
 
 \item{includeCDR}{If true, will include the central death rate for each age group}
 
-\item{...}{Other optional grouping variables (can be race, gender, etc.)}
+\item{includePS}{If true, will include the proportion surviving for each age group}
 
-\item{includeCPS}{If true, will include the proportion surviving for each age group}
+\item{...}{Other optional grouping variables (can be race, gender, etc.)}
+}
+\value{
+Lifetable
 }
 \description{
 Gives user more control over their lifetable compared to the life_expectancy() function.
 Allows the user to add in the central death rate and proportion surviving to age x.
 Allows the user to omit accessory columns which are used to calculate life expectancy.
+}
+\examples{
+lifetable(mortality, age_group, population, deaths, FALSE, TRUE, TRUE)
 }
