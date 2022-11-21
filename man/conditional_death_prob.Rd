@@ -17,6 +17,14 @@ conditional_death_prob(data, age, pop, deaths, ...)
 
 \item{...}{Optional other categorical grouping variables (race, sex, etc.)}
 }
+\value{
+Data frame that was input with an added column, ConditionalProbDeath.
+}
 \description{
-Conditional Probability of Death at Age x
+Adds a new column called ConditionalProbDeath to the dataset that was input.
+This column represents the probability of death given the age group for each age group.
+In other words, the probability a person in a given age group will die before their next birthday.
+}
+\examples{
+conditional_death_prob(mortality, age_group, population, deaths)
 }
