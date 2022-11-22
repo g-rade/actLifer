@@ -17,6 +17,15 @@ number_to_survive(data, age, pop, deaths, ...)
 
 \item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
+\value{
+Dataset that was input with added columns:
+ConditionalProbDeath, ConditionalProbLife, and NumberToSurvive.
+}
 \description{
-The Number of People to Survive to Age x
+Adds a new column called NumberToSurvive to the dataset that was input.
+NumberToSurvive represents the number of people living at the beginning of the given age interval.
+using an arbitrary 100,000 people for the first age group in the table.
+}
+\examples{
+number_to_survive(mortality, age_group, population, deaths)
 }

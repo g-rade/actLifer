@@ -17,6 +17,13 @@ central_death_rate(data, age, pop, deaths, ...)
 
 \item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
+\value{
+Data frame that was input with an added CentralDeathRate column.
+}
 \description{
-Central Death Rate
+Adds a new column called CentralDeathRate to the dataset that was input.
+This column represents the central death rate of each age group - deaths/population.
+}
+\examples{
+central_death_rate(mortality, age_group, population, deaths)
 }

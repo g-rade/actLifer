@@ -6,7 +6,22 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of lifetables is to …
+The `lifetables` package contains functions that create a life table
+based on mortality data, and ultimately calculates life expectancy from
+data on annual deaths for given ages/age groups. This package also
+contains mortality data from CDC wonder.
+
+## Target audience
+
+Our target audience for this package are actuaries, epidemiologists, or
+generally any data scientists working with mortality data.
+
+## R package proposal
+
+We are still working on an R package that has a function for creating
+lifetables from age-group mortality data, and some included lifetables.
+We now want to include functions that will result in different
+combinations of columns from a full lifetable.
 
 ## Installation
 
@@ -20,6 +35,6 @@ devtools::install_github("g-rade/lifetables")
 
 ## Contributors
 
--   [Grace Rade](https://github.com/g-rade)
--   [Maeve Tyler-Penny](https://github.com/mctp546)
--   [Julia Ting](https://github.com/jtingy)
+- [Grace Rade](https://github.com/g-rade)
+- [Maeve Tyler-Penny](https://github.com/mctp546)
+- [Julia Ting](https://github.com/jtingy)

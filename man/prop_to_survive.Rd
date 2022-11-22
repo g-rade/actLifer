@@ -17,6 +17,15 @@ prop_to_survive(data, age, pop, deaths, ...)
 
 \item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
+\value{
+Data frame that was input with columns for steps up to proportion surviving to age x included.
+That is, the original data with the following added columns:
+ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PropToSurvive
+}
 \description{
-Proportion to Survive to Age x
+Adds a new column called PropToSurvive to the dataset that was input.
+PropToSurvive is the proportion surviving to age x
+}
+\examples{
+prop_to_survive(mortality, age_group, population, deaths)
 }
