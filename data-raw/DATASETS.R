@@ -23,6 +23,5 @@ mortality2 <- read.delim("data-raw/mortality2016_2.txt") %>%
 mortality2$deaths <- as.numeric(mortality2$deaths)
 mortality2$population <- as.numeric(mortality2$population)
 
-mortality2 <- as_tibble(mortality2)
 
 usethis::use_data(mortality2, overwrite = TRUE)
