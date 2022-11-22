@@ -49,6 +49,10 @@ head(mortality2)
 ## CentralDeathRate, PropToSurvive, and LifeExpectancy by setting includeAllSteps = FALSE
 
 lifetable(mortality2, age_group, population, deaths, FALSE, TRUE, TRUE)
+
+
+## Or show everything by setting includeAllSteps=TRUE, includeCDR=TRUE, and includePS=TRUE which are the default values
+lifetable(mortality2, age_group, population, deaths)
 ```
 
 
