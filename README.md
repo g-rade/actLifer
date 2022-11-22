@@ -16,6 +16,13 @@ contains mortality data from CDC wonder.
 Our target audience for this package are actuaries, epidemiologists, or
 generally any data scientists working with mortality data.
 
+## R package proposal
+
+We are still working on an R package that has a function for creating
+lifetables from age-group mortality data, and some included lifetables.
+We now want to include functions that will result in different
+combinations of columns from a full lifetable.
+
 ## Installation
 
 You can install the development version of lifetables from
