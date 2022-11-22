@@ -25,3 +25,4 @@ mortality2$population <- as.numeric(mortality2$population)
 
 
 usethis::use_data(mortality2, overwrite = TRUE)
+
