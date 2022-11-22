@@ -18,8 +18,7 @@ mortality2 <- read.delim("data-raw/mortality2016_2.txt") %>%
   select(age_group, deaths, population) %>%
   filter(!is.na(deaths)) %>%
   mutate(age_group = ifelse(age_group == "", "Not Stated", age_group)) %>%
-  filter(age_group != "Not Stated", deaths != "Not Applicable", population != "Not Applicable") %>%
-  filter(is.na(population) != FALSE)
+  filter(age_group != "Not Stated", deaths != "Not Applicable", population != "Not Applicable")
 
 mortality2$deaths <- as.numeric(mortality2$deaths)
 mortality2$population <- as.numeric(mortality2$population)
