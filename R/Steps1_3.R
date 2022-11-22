@@ -1,7 +1,7 @@
-
-utils::globalVariables(c("ConditionalProbDeath", "ConditionalProbLife"))
-
 #' Central Death Rate
+#'
+#' Adds a new column called CentralDeathRate to the dataset that was input.
+#' This column represents the central death rate of each age group - deaths/population.
 #'
 #' @param data The mortality dataset, includes an age grouping variable,
 #' @param age The age grouping variable, must be categorical
@@ -9,19 +9,30 @@ utils::globalVariables(c("ConditionalProbDeath", "ConditionalProbLife"))
 #' @param deaths The midyear number of deaths at each age group, must be numeric
 #' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
-#' @return
+#' @return Data frame that was input with an added CentralDeathRate column.
 #' @export
 #'
-#' @examples
+#' @examples central_death_rate(mortality, age_group, population, deaths)
 central_death_rate <- function(data, age, pop, deaths, ...){
-  CentralDeathRate <- NULL
-  data <- data
-  data %>%
+  data <- data %>%
     group_by(...) %>%
     mutate(CentralDeathRate = (data$deaths/data$pop))
+  # print(map2_dbl(data$deaths, data$pop, one_cdr))
+  # cdr_vector <- map2_dbl(data$deaths, data$pop, one_cdr)
+  # data %>%
+  #   mutate(CentralDeathRate = cdr_vector)
+  return(data)
 }
 
+# one_cdr <- function(death, pop) {
+#   return(death/pop)
+# }
+
 #' Conditional Probability of Death at Age x
+#'
+#' Adds a new column called ConditionalProbDeath to the dataset that was input.
+#' This column represents the probability of death given the age group for each age group.
+#' In other words, the probability a person in a given age group will die before their next birthday.
 #'
 #' @param data The mortality dataset, includes an age grouping variable
 #' @param age The age grouping variable, must be cateogrical
@@ -29,33 +40,41 @@ central_death_rate <- function(data, age, pop, deaths, ...){
 #' @param deaths The number of deaths at each age group, must be numeric
 #' @param ... Optional other categorical grouping variables (race, sex, etc.)
 #' @import dplyr
-#' @return
+#' @return Data frame that was input with an added column, ConditionalProbDeath.
 #' @export
 #'
-#' @examples
+#' @examples conditional_death_prob(mortality, age_group, population, deaths)
 conditional_death_prob <- function(data, age, pop, deaths, ...){
-  ConditionalProbDeath <- NULL
-  data %>%
+  data <- data %>%
     group_by(...) %>%
-    mutate(ConditionalProbDeath = (data$deaths/(data$pop + (2*data$deaths))))
+    mutate(ConditionalProbDeath = (data$deaths/(data$pop + (0.5*data$deaths))))
+
+  return(data)
+
   }
 
 #' Conditional Probability of Survival at Age x
 #'
+#' Adds a new column called ConditionalProbLife to the dataset that was input.
+#' ConditionalProbLife column contains the probabilities of surviving given age group.
+#'
+#'
 #' @param data The mortality dataset, includes an age grouping variable
 #' @param age The age grouping variable, must be cateogrical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The number of deaths at each age group, must be numeric
 #' @param ... Optional other categorical grouping variables (race, sex, etc.)
 #' @import dplyr
-#' @return
+#' @return Dataset that was input with added columns ConditionalProbDeath and ConditionalProbLife.
+#' In other words, we are doing the "steps" up to the conditional probability of survival.
 #' @export
 #'
-#' @examples
+#' @examples conditional_life_prob(mortality, age_group, population, deaths)
 conditional_life_prob <- function(data, age, pop, deaths, ...){
-  ConditionalProbLife <- NULL
-  data %>%
+  data <- data %>%
     conditional_death_prob() %>%
     mutate(ConditionalProbLife = (1 - ConditionalProbDeath))
+
+  return(data)
 }
 

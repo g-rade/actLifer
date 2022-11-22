@@ -17,6 +17,14 @@ conditional_life_prob(data, age, pop, deaths, ...)
 
 \item{...}{Optional other categorical grouping variables (race, sex, etc.)}
 }
+\value{
+Dataset that was input with added columns ConditionalProbDeath and ConditionalProbLife.
+In other words, we are doing the "steps" up to the conditional probability of survival.
+}
 \description{
-Conditional Probability of Survival at Age x
+Adds a new column called ConditionalProbLife to the dataset that was input.
+ConditionalProbLife column contains the probabilities of surviving given age group.
+}
+\examples{
+conditional_life_prob(mortality, age_group, population, deaths)
 }
