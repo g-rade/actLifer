@@ -4,7 +4,7 @@
 \alias{person_years}
 \title{Person Years Lived at Age x}
 \usage{
-person_years(data, age, pop, deaths, ...)
+person_years(data, age, pop, deaths)
 }
 \arguments{
 \item{data}{The mortality dataset, includes an age grouping variable,}

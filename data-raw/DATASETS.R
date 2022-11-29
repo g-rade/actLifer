@@ -1,6 +1,7 @@
 library(janitor)
 library(dplyr)
 library(purrr)
+library(tibble)
 
 mortality <- read.delim("data-raw/mortality2016.txt") %>%
   select(Age.Group, Deaths, Population) %>%
@@ -10,6 +11,7 @@ mortality <- read.delim("data-raw/mortality2016.txt") %>%
   filter(age_group != "Not Stated",  deaths != "Not Applicable", population != "Not Applicable") %>%
   mutate(deaths = as.numeric(deaths), population = as.numeric(population)) %>%
   as_tibble()
+
 
 usethis::use_data(mortality, overwrite = TRUE)
 
