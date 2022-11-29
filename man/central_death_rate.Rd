@@ -4,7 +4,7 @@
 \alias{central_death_rate}
 \title{Central Death Rate}
 \usage{
-central_death_rate(data, age, pop, deaths, ...)
+central_death_rate(data, age, pop, deaths)
 }
 \arguments{
 \item{data}{The mortality dataset, includes an age grouping variable,}

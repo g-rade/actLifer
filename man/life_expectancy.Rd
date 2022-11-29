@@ -4,7 +4,7 @@
 \alias{life_expectancy}
 \title{Life Expectancy of Age x}
 \usage{
-life_expectancy(data, age, pop, deaths, ...)
+life_expectancy(data, age, pop, deaths)
 }
 \arguments{
 \item{data}{The mortality dataset, includes an age grouping variable,}
