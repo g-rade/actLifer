@@ -20,8 +20,9 @@
 #' @examples lifetable(mortality, age_group, population, deaths, FALSE, TRUE, TRUE)
 lifetable <- function(data, age, pop, deaths, includeAllSteps=TRUE, includeCDR=TRUE, includePS=TRUE, ...) {
   data <- data %>%
-    mutate(CentralDeathRate = (data$deaths/data$pop)) %>%
-    life_expectancy(., age, pop, deaths)
+    group_by(...) %>%
+    central_death_rate(., {{age}}, {{pop}}, {{deaths}}) %>%
+    life_expectancy(., {{age}}, {{pop}}, {{deaths}})
 
     if (!includeCDR) {
       data <- select(data, -CentralDeathRate)

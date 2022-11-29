@@ -4,7 +4,7 @@
 \alias{conditional_life_prob}
 \title{Conditional Probability of Survival at Age x}
 \usage{
-conditional_life_prob(data, age, pop, deaths, ...)
+conditional_life_prob(data, age, pop, deaths)
 }
 \arguments{
 \item{data}{The mortality dataset, includes an age grouping variable}

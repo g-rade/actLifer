@@ -13,14 +13,9 @@
 #' @export
 #'
 #' @examples central_death_rate(mortality, age_group, population, deaths)
-central_death_rate <- function(data, age, pop, deaths, ...){
+central_death_rate <- function(data, age, pop, deaths){
   data <- data %>%
-    group_by(...) %>%
-    mutate(CentralDeathRate = (data$deaths/data$pop))
-  # print(map2_dbl(data$deaths, data$pop, one_cdr))
-  # cdr_vector <- map2_dbl(data$deaths, data$pop, one_cdr)
-  # data %>%
-  #   mutate(CentralDeathRate = cdr_vector)
+    mutate(CentralDeathRate = ({{deaths}}/{{pop}}))
   return(data)
 }
 
@@ -44,10 +39,9 @@ central_death_rate <- function(data, age, pop, deaths, ...){
 #' @export
 #'
 #' @examples conditional_death_prob(mortality, age_group, population, deaths)
-conditional_death_prob <- function(data, age, pop, deaths, ...){
+conditional_death_prob <- function(data, age, pop, deaths){
   data <- data %>%
-    group_by(...) %>%
-    mutate(ConditionalProbDeath = (data$deaths/(data$pop + (0.5*data$deaths))))
+    mutate(ConditionalProbDeath = ({{deaths}}/({{pop}} + (0.5*{{deaths}}))))
 
   return(data)
 
@@ -70,9 +64,9 @@ conditional_death_prob <- function(data, age, pop, deaths, ...){
 #' @export
 #'
 #' @examples conditional_life_prob(mortality, age_group, population, deaths)
-conditional_life_prob <- function(data, age, pop, deaths, ...){
+conditional_life_prob <- function(data, age, pop, deaths){
   data <- data %>%
-    conditional_death_prob() %>%
+    conditional_death_prob(., {{age}}, {{pop}}, {{deaths}}) %>%
     mutate(ConditionalProbLife = (1 - ConditionalProbDeath))
 
   return(data)
