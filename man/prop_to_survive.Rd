@@ -4,7 +4,7 @@
 \alias{prop_to_survive}
 \title{Proportion to Survive to Age x}
 \usage{
-prop_to_survive(data, age, pop, deaths, ...)
+prop_to_survive(data, age, pop, deaths)
 }
 \arguments{
 \item{data}{The mortality dataset, includes an age grouping variable,}
