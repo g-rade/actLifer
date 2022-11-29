@@ -37,6 +37,25 @@ You can install the development version of lifetables from [GitHub](https://gith
 devtools::install_github("g-rade/lifetables")
 ```
 
+## How To Use 'lifetables'
+```{r}
+library(lifetables)
+
+## Take a look at the mortality2 data fram
+head(mortality2)
+
+
+## Use the lifetable function to make a custom life table with just
+## CentralDeathRate, PropToSurvive, and LifeExpectancy by setting includeAllSteps = FALSE
+
+lifetable(mortality2, age_group, population, deaths, FALSE, TRUE, TRUE)
+
+
+## Or show everything by setting includeAllSteps=TRUE, includeCDR=TRUE, and includePS=TRUE which are the default values
+lifetable(mortality2, age_group, population, deaths)
+```
+
+
 ## Contributors
 
   + [Grace Rade](https://github.com/g-rade)
