@@ -18,9 +18,9 @@
 #' @export
 #'
 #' @examples total_years_lived(mortality, age_group, population, deaths)
-total_years_lived <- function(data, age, pop, deaths, ...) {
+total_years_lived <- function(data, age, pop, deaths) {
   data <- data %>%
-    person_years() %>%
+    person_years(., {{age}}, {{pop}}, {{deaths}}) %>%
     mutate(TotalYears = if_else(row_number() == 1, sum(PersonYears), sum(PersonYears)-lag(cumsum(PersonYears))))
 
   return(data)
@@ -43,9 +43,9 @@ total_years_lived <- function(data, age, pop, deaths, ...) {
 #' @export
 #'
 #' @examples life_expectancy(mortality, age_group, population, deaths)
-life_expectancy <- function(data, age, pop, deaths, ...) {
+life_expectancy <- function(data, age, pop, deaths) {
   data <- data %>%
-    total_years_lived() %>%
+    total_years_lived(., {{age}}, {{pop}}, {{deaths}}) %>%
     mutate(LifeExpectancy = TotalYears/NumberToSurvive)
 
   return(data)
