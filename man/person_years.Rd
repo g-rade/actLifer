@@ -14,8 +14,6 @@ person_years(data, age, pop, deaths)
 \item{pop}{Population of each age group, must be numeric}
 
 \item{deaths}{The midyear number of deaths at each age group, must be numeric}
-
-\item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
 \value{
 Dataset that was input with the added columns:
