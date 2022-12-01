@@ -45,5 +45,8 @@ mortality3 <- read.delim("data-raw/gender_mortality2016.txt") %>%
   filter(is.na(population) == FALSE) %>%
   as_tibble()
 
+mortality3$deaths <- as.numeric(mortality3$deaths)
+mortality3$population <- as.numeric(mortality3$population)
+
 usethis::use_data(mortality3, overwrite = TRUE)
 
