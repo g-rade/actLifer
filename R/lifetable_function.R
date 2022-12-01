@@ -20,7 +20,7 @@
 #' @examples lifetable(mortality, age_group, population, deaths, FALSE, TRUE, TRUE)
 lifetable <- function(data, age, pop, deaths, includeAllSteps=TRUE, includeCDR=TRUE, includePS=TRUE, ...) {
   data <- data %>%
-    group_by(...) %>%
+    group_by({{...}}) %>%
     central_death_rate(., {{age}}, {{pop}}, {{deaths}}) %>%
     life_expectancy(., {{age}}, {{pop}}, {{deaths}})
 
