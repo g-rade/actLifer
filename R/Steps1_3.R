@@ -7,7 +7,6 @@
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #' @return Data frame that was input with an added CentralDeathRate column.
 #' @export
@@ -33,7 +32,6 @@ central_death_rate <- function(data, age, pop, deaths){
 #' @param age The age grouping variable, must be cateogrical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The number of deaths at each age group, must be numeric
-#' @param ... Optional other categorical grouping variables (race, sex, etc.)
 #' @import dplyr
 #' @return Data frame that was input with an added column, ConditionalProbDeath.
 #' @export
@@ -57,7 +55,6 @@ conditional_death_prob <- function(data, age, pop, deaths){
 #' @param age The age grouping variable, must be cateogrical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The number of deaths at each age group, must be numeric
-#' @param ... Optional other categorical grouping variables (race, sex, etc.)
 #' @import dplyr
 #' @return Dataset that was input with added columns ConditionalProbDeath and ConditionalProbLife.
 #' In other words, we are doing the "steps" up to the conditional probability of survival.
