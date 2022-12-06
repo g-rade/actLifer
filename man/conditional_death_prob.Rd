@@ -14,8 +14,6 @@ conditional_death_prob(data, age, pop, deaths)
 \item{pop}{Population of each age group, must be numeric}
 
 \item{deaths}{The number of deaths at each age group, must be numeric}
-
-\item{...}{Optional other categorical grouping variables (race, sex, etc.)}
 }
 \value{
 Data frame that was input with an added column, ConditionalProbDeath.
