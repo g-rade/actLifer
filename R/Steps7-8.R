@@ -10,7 +10,6 @@
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #'
 #' @return Dataset that was input with the added columns:
@@ -35,7 +34,6 @@ total_years_lived <- function(data, age, pop, deaths) {
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #'
 #' @return Dataset that was input with the added columns:
