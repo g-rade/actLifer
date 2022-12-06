@@ -101,3 +101,15 @@ The package includes three datasets, all sourced from the CDC Wonder Database.
 + `mortality2` contains data from the year 2016 with single-year age gaps
 
 + `mortality3` contains data from the year 2016 with single-year age gaps and a gender grouping variable
+
+
+### What Do These Datasets Look Like?
+
+Each of the included data sets include an age group variable, a population variable, and a deaths variable. Population represents the mid-year population for each age group. Deaths represents the number of people in each age group that have died. 
+
+Here's what the first five rows of `mortality2` look like. 
+
+```{r}
+head(mortality2)
+```
+
