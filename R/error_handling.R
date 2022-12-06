@@ -9,19 +9,18 @@
 #'
 #' @examples
 input_check <- function(data, age, pop, deaths) {
-  pop_col <- data %>%
-    select({{pop}})
-  death_col <- data %>%
-    select({{deaths}})
+  #0) Check arg types - age,pop,deaths = "strings" and data is a df or tbl
 
+  #1) Check that the column names exist at all
 
-  print(length(unlist(pop_col)))
+  #2) Check that the columns are the right type if they do exist
+
+  #3) If wrong type, coerce
+
+  #3) Check length of cols
 #Check data type
 #Missing values
 #Wrong types
-  pop_type = typeof(unlist(pop_col))
-  death_type = typeof(unlist(death_col))
-  print(data[pop])
   if (pop_type != "double") {
     print(as.numeric(data[[pop]]))
     # data <- data %>%
