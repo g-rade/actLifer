@@ -4,7 +4,7 @@
 \alias{number_to_survive}
 \title{The Number of People to Survive to Age x}
 \usage{
-number_to_survive(data, age, pop, deaths, ...)
+number_to_survive(data, age, pop, deaths)
 }
 \arguments{
 \item{data}{The mortality dataset, includes an age grouping variable,}
