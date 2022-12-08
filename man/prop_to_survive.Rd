@@ -25,5 +25,5 @@ Adds a new column called PropToSurvive to the dataset that was input.
 PropToSurvive is the proportion surviving to age x
 }
 \examples{
-prop_to_survive(mortality, age_group, population, deaths)
+prop_to_survive(mortality, "age_group", "population", "deaths")
 }

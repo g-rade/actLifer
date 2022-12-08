@@ -24,5 +24,5 @@ Adds a new column called LifeExpectancy to the dataset that was input.
 LifeExpectancy is how many more years we expect a person of age x to live.
 }
 \examples{
-life_expectancy(mortality, age_group, population, deaths)
+life_expectancy(mortality, "age_group", "population", "deaths")
 }

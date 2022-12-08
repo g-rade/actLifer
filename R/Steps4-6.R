@@ -13,7 +13,7 @@
 #' ConditionalProbDeath, ConditionalProbLife, and NumberToSurvive.
 #' @export
 #'
-#' @examples number_to_survive(mortality, age_group, population, deaths)
+#' @examples number_to_survive(mortality, "age_group", "population", "deaths")
 number_to_survive <- function(data, age, pop, deaths){
   data <- data %>%
     conditional_life_prob(., age, pop, deaths) %>%
@@ -37,7 +37,7 @@ number_to_survive <- function(data, age, pop, deaths){
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PropToSurvive
 #' @export
 #'
-#' @examples prop_to_survive(mortality, age_group, population, deaths)
+#' @examples prop_to_survive(mortality, "age_group", "population", "deaths")
 prop_to_survive <- function(data, age, pop, deaths){
   data<- data %>%
     number_to_survive(., age, pop, deaths) %>%
@@ -59,7 +59,7 @@ prop_to_survive <- function(data, age, pop, deaths){
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PropToSurvive, PersonYears.
 #' @export
 #'
-#' @examples person_years(mortality, age_group, population, deaths)
+#' @examples person_years(mortality, "age_group", "population", "deaths")
 person_years <- function(data, age, pop, deaths){
   data <-data %>%
     prop_to_survive(., age, pop, deaths) %>%

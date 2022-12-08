@@ -17,7 +17,7 @@
 #' @return Lifetable
 #' @export
 #'
-#' @examples lifetable(mortality, age_group, population, deaths, FALSE, TRUE, TRUE)
+#' @examples lifetable(mortality, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 lifetable <- function(data, age, pop, deaths, includeAllSteps=TRUE, includeCDR=TRUE, includePS=TRUE, ...) {
   data <- data %>%
     group_by(...) %>%

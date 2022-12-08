@@ -24,5 +24,5 @@ Adds a new column called ConditionalProbLife to the dataset that was input.
 ConditionalProbLife column contains the probabilities of surviving given age group.
 }
 \examples{
-conditional_life_prob(mortality, age_group, population, deaths)
+conditional_life_prob(mortality, "age_group", "population", "deaths")
 }

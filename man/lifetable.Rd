@@ -41,5 +41,5 @@ Allows the user to add in the central death rate and proportion surviving to age
 Allows the user to omit accessory columns which are used to calculate life expectancy.
 }
 \examples{
-lifetable(mortality, age_group, population, deaths, FALSE, TRUE, TRUE)
+lifetable(mortality, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 }
