@@ -13,7 +13,7 @@
 #'
 #' @examples central_death_rate(mortality, "age_group", "population", "deaths")
 central_death_rate <- function(data, age, pop, deaths){
-
+  data <- input_check(data, age, pop, deaths)
   data <- data %>%
     mutate(CentralDeathRate = .data[[deaths]]/.data[[pop]])
   return(data)
@@ -35,6 +35,7 @@ central_death_rate <- function(data, age, pop, deaths){
 #'
 #' @examples conditional_death_prob(mortality, "age_group", "population", "deaths")
 conditional_death_prob <- function(data, age, pop, deaths){
+  data <- input_check(data, age, pop, deaths)
   data <- data %>%
     mutate(ConditionalProbDeath = (.data[[deaths]]/(.data[[pop]] + (0.5*.data[[deaths]]))))
 
