@@ -8,7 +8,7 @@ lifetable_ref <- tribble(
   "2 years", 1046, 3992154, 0.0002620139403, 0.0002619796192, 0.9997380204, 99379.30449, 0.9937930449, 99366.28681, 7388902.744, 74.35051777
 )
 
-test_that("central_death_rate works", {
+test_that("central_death_rate works - length", {
   mortality3 <- central_death_rate(mortality2, "age_group", "population", "deaths")
   expect_equal(length(mortality3$CentralDeathRate), length(mortality3$age_group))
 })
