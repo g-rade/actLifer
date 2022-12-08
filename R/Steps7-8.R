@@ -10,14 +10,13 @@
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #'
 #' @return Dataset that was input with the added columns:
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PersonYears, and TotalYears.
 #' @export
 #'
-#' @examples total_years_lived(mortality, age_group, population, deaths)
+#' @examples total_years_lived(mortality, "age_group", "population", "deaths")
 total_years_lived <- function(data, age, pop, deaths) {
   data <- data %>%
     person_years(., age, pop, deaths) %>%
@@ -35,14 +34,13 @@ total_years_lived <- function(data, age, pop, deaths) {
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #'
 #' @return Dataset that was input with the added columns:
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PersonYears, TotalYears, and LifeExpectancy.
 #' @export
 #'
-#' @examples life_expectancy(mortality, age_group, population, deaths)
+#' @examples life_expectancy(mortality, "age_group", "population", "deaths")
 life_expectancy <- function(data, age, pop, deaths) {
   data <- data %>%
     total_years_lived(., age, pop, deaths) %>%

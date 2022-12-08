@@ -39,3 +39,4 @@ input_check <- function(data, age, pop, deaths) {
   return(data)
 
 }
+

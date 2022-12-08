@@ -14,8 +14,6 @@ life_expectancy(data, age, pop, deaths)
 \item{pop}{Population of each age group, must be numeric}
 
 \item{deaths}{The midyear number of deaths at each age group, must be numeric}
-
-\item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
 \value{
 Dataset that was input with the added columns:
@@ -26,5 +24,5 @@ Adds a new column called LifeExpectancy to the dataset that was input.
 LifeExpectancy is how many more years we expect a person of age x to live.
 }
 \examples{
-life_expectancy(mortality, age_group, population, deaths)
+life_expectancy(mortality, "age_group", "population", "deaths")
 }

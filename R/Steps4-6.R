@@ -8,13 +8,12 @@
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #' @return Dataset that was input with added columns:
 #' ConditionalProbDeath, ConditionalProbLife, and NumberToSurvive.
 #' @export
 #'
-#' @examples number_to_survive(mortality, age_group, population, deaths)
+#' @examples number_to_survive(mortality, "age_group", "population", "deaths")
 number_to_survive <- function(data, age, pop, deaths){
   data <- data %>%
     conditional_life_prob(., age, pop, deaths) %>%
@@ -32,14 +31,13 @@ number_to_survive <- function(data, age, pop, deaths){
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #' @return Data frame that was input with columns for steps up to proportion surviving to age x included.
 #' That is, the original data with the following added columns:
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PropToSurvive
 #' @export
 #'
-#' @examples prop_to_survive(mortality, age_group, population, deaths)
+#' @examples prop_to_survive(mortality, "age_group", "population", "deaths")
 prop_to_survive <- function(data, age, pop, deaths){
   data<- data %>%
     number_to_survive(., age, pop, deaths) %>%
@@ -56,13 +54,12 @@ prop_to_survive <- function(data, age, pop, deaths){
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #' @return Dataset that was input with the added columns:
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PropToSurvive, PersonYears.
 #' @export
 #'
-#' @examples person_years(mortality, age_group, population, deaths)
+#' @examples person_years(mortality, "age_group", "population", "deaths")
 person_years <- function(data, age, pop, deaths){
   data <-data %>%
     prop_to_survive(., age, pop, deaths) %>%

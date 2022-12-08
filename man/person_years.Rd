@@ -14,8 +14,6 @@ person_years(data, age, pop, deaths)
 \item{pop}{Population of each age group, must be numeric}
 
 \item{deaths}{The midyear number of deaths at each age group, must be numeric}
-
-\item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
 \value{
 Dataset that was input with the added columns:
@@ -26,5 +24,5 @@ Adds a new column called PersonYears to the dataset that was input.
 PersonYears represents the number of years lived at age x based on the number surviving to age x.
 }
 \examples{
-person_years(mortality, age_group, population, deaths)
+person_years(mortality, "age_group", "population", "deaths")
 }

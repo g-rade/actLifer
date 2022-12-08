@@ -14,8 +14,6 @@ conditional_life_prob(data, age, pop, deaths)
 \item{pop}{Population of each age group, must be numeric}
 
 \item{deaths}{The number of deaths at each age group, must be numeric}
-
-\item{...}{Optional other categorical grouping variables (race, sex, etc.)}
 }
 \value{
 Dataset that was input with added columns ConditionalProbDeath and ConditionalProbLife.
@@ -26,5 +24,5 @@ Adds a new column called ConditionalProbLife to the dataset that was input.
 ConditionalProbLife column contains the probabilities of surviving given age group.
 }
 \examples{
-conditional_life_prob(mortality, age_group, population, deaths)
+conditional_life_prob(mortality, "age_group", "population", "deaths")
 }

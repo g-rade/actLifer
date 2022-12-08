@@ -14,8 +14,6 @@ number_to_survive(data, age, pop, deaths)
 \item{pop}{Population of each age group, must be numeric}
 
 \item{deaths}{The midyear number of deaths at each age group, must be numeric}
-
-\item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
 \value{
 Dataset that was input with added columns:
@@ -27,5 +25,5 @@ NumberToSurvive represents the number of people living at the beginning of the g
 using an arbitrary 100,000 people for the first age group in the table.
 }
 \examples{
-number_to_survive(mortality, age_group, population, deaths)
+number_to_survive(mortality, "age_group", "population", "deaths")
 }

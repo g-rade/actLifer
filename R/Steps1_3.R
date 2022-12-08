@@ -7,12 +7,11 @@
 #' @param age The age grouping variable, must be categorical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The midyear number of deaths at each age group, must be numeric
-#' @param ... Other optional grouping variables (can be race, gender, etc.)
 #' @import dplyr
 #' @return Data frame that was input with an added CentralDeathRate column.
 #' @export
 #'
-#' @examples central_death_rate(mortality, age_group, population, deaths)
+#' @examples central_death_rate(mortality, "age_group", "population", "deaths")
 central_death_rate <- function(data, age, pop, deaths){
   data <- input_check(data, age, pop, deaths)
   data <- data %>%
@@ -30,12 +29,11 @@ central_death_rate <- function(data, age, pop, deaths){
 #' @param age The age grouping variable, must be cateogrical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The number of deaths at each age group, must be numeric
-#' @param ... Optional other categorical grouping variables (race, sex, etc.)
 #' @import dplyr
 #' @return Data frame that was input with an added column, ConditionalProbDeath.
 #' @export
 #'
-#' @examples conditional_death_prob(mortality, age_group, population, deaths)
+#' @examples conditional_death_prob(mortality, "age_group", "population", "deaths")
 conditional_death_prob <- function(data, age, pop, deaths){
   data <- input_check(data, age, pop, deaths)
   data <- data %>%
@@ -55,13 +53,12 @@ conditional_death_prob <- function(data, age, pop, deaths){
 #' @param age The age grouping variable, must be cateogrical
 #' @param pop Population of each age group, must be numeric
 #' @param deaths The number of deaths at each age group, must be numeric
-#' @param ... Optional other categorical grouping variables (race, sex, etc.)
 #' @import dplyr
 #' @return Dataset that was input with added columns ConditionalProbDeath and ConditionalProbLife.
 #' In other words, we are doing the "steps" up to the conditional probability of survival.
 #' @export
 #'
-#' @examples conditional_life_prob(mortality, age_group, population, deaths)
+#' @examples conditional_life_prob(mortality, "age_group", "population", "deaths")
 conditional_life_prob <- function(data, age, pop, deaths){
   data <- data %>%
     conditional_death_prob(., age, pop, deaths) %>%

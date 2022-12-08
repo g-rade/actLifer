@@ -14,8 +14,6 @@ prop_to_survive(data, age, pop, deaths)
 \item{pop}{Population of each age group, must be numeric}
 
 \item{deaths}{The midyear number of deaths at each age group, must be numeric}
-
-\item{...}{Other optional grouping variables (can be race, gender, etc.)}
 }
 \value{
 Data frame that was input with columns for steps up to proportion surviving to age x included.
@@ -27,5 +25,5 @@ Adds a new column called PropToSurvive to the dataset that was input.
 PropToSurvive is the proportion surviving to age x
 }
 \examples{
-prop_to_survive(mortality, age_group, population, deaths)
+prop_to_survive(mortality, "age_group", "population", "deaths")
 }

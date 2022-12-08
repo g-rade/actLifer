@@ -4,6 +4,8 @@
 # lifetables
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The `lifetables` package contains functions that create a life table
@@ -49,19 +51,21 @@ library(lifetables)
 
 ## Take a look at the mortality2 data fram
 head(mortality2)
+#> # A tibble: 6 × 3
 #>   age_group deaths population
-#> 1  < 1 year  23161    3970145
-#> 2    1 year   1568    3995008
-#> 3   2 years   1046    3992154
-#> 4   3 years    791    3982074
-#> 5   4 years    640    3987656
-#> 6   5 years    546    4032515
+#>   <chr>      <dbl>      <dbl>
+#> 1 < 1 year   23161    3970145
+#> 2 1 year      1568    3995008
+#> 3 2 years     1046    3992154
+#> 4 3 years      791    3982074
+#> 5 4 years      640    3987656
+#> 6 5 years      546    4032515
 
 
 ## Use the lifetable function to make a custom life table with just
 ## CentralDeathRate, PropToSurvive, and LifeExpectancy by setting includeAllSteps = FALSE
 
-lifetable(mortality2, age_group, population, deaths, FALSE, TRUE, TRUE)
+lifetable(mortality2, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 #> # A tibble: 85 × 6
 #>    age_group deaths population CentralDeathRate PropToSurvive LifeExpectancy
 #>    <chr>      <dbl>      <dbl>            <dbl>         <dbl>          <dbl>
@@ -79,7 +83,7 @@ lifetable(mortality2, age_group, population, deaths, FALSE, TRUE, TRUE)
 
 
 ## Or show everything by setting includeAllSteps=TRUE, includeCDR=TRUE, and includePS=TRUE which are the default values
-lifetable(mortality2, age_group, population, deaths)
+lifetable(mortality2, "age_group", "population", "deaths")
 #> # A tibble: 85 × 11
 #>    age_group deaths population Central…¹ Condi…² Condi…³ Numbe…⁴ PropT…⁵ Perso…⁶
 #>    <chr>      <dbl>      <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
