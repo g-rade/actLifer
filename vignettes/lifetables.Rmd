@@ -91,7 +91,9 @@ All of the functions take in a dataset that has columns for age group ($x$), dea
   
 ```{r}
 example <- lifetable(mortality2, age_group, population, deaths)
+```
 
+```{r, echo = FALSE}
 example[1:5,]
 
 ```
@@ -114,7 +116,7 @@ Each of the included data sets include an age group variable, a population varia
 
 Here's what the first five rows of `mortality2` look like. 
 
-```{r}
+```{r, echo = FALSE}
 mortality2[1:5,]
 ```
 
