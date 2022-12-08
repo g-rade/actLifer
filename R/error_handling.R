@@ -27,7 +27,7 @@ input_check <- function(data, age, pop, deaths) {
   #2) Check that the columns are the right type if they do exist
   col_types <- sapply(data, class)
   if (col_types[pop] != "numeric" | col_types[deaths] != "numeric") {
-    warning("coercing column(s) to type numeric")
+    warning("coercing column(s) to type numeric.  This may produce NAs which will affect function performance.")
     #3) If wrong type, coerce
     if (col_types[pop] != "numeric") {
       data[pop] <- as.numeric(unlist(data[pop]))
@@ -36,7 +36,6 @@ input_check <- function(data, age, pop, deaths) {
       data[deaths] <- as.numeric(unlist(data[deaths]))
     }
   }
-  #3) Check length of cols
   return(data)
 
 }
