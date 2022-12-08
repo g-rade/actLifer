@@ -16,7 +16,7 @@
 #' @examples number_to_survive(mortality, age_group, population, deaths)
 number_to_survive <- function(data, age, pop, deaths){
   data <- data %>%
-    conditional_life_prob(., {{age}}, {{pop}}, {{deaths}}) %>%
+    conditional_life_prob(., age, pop, deaths) %>%
     mutate(NumberToSurvive = if_else(row_number()==1, 100000, 100000*lag(cumprod(ConditionalProbLife))))
   return(data)
 }
@@ -40,7 +40,7 @@ number_to_survive <- function(data, age, pop, deaths){
 #' @examples prop_to_survive(mortality, age_group, population, deaths)
 prop_to_survive <- function(data, age, pop, deaths){
   data<- data %>%
-    number_to_survive(., {{age}}, {{pop}}, {{deaths}}) %>%
+    number_to_survive(., age, pop, deaths) %>%
     mutate(PropToSurvive = NumberToSurvive/100000)
   return(data)
   }
@@ -62,7 +62,7 @@ prop_to_survive <- function(data, age, pop, deaths){
 #' @examples person_years(mortality, age_group, population, deaths)
 person_years <- function(data, age, pop, deaths){
   data <-data %>%
-    prop_to_survive(., {{age}}, {{pop}}, {{deaths}}) %>%
+    prop_to_survive(., age, pop, deaths) %>%
     mutate(PersonYears = (NumberToSurvive+lead(NumberToSurvive))/2) %>%
     mutate(PersonYears = if_else(is.na(PersonYears), NumberToSurvive, PersonYears))
 
