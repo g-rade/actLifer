@@ -2,10 +2,22 @@
 % Please edit documentation in R/error_handling.R
 \name{input_check}
 \alias{input_check}
-\title{Title}
+\title{Error Handling Function}
 \usage{
 input_check(data, age, pop, deaths)
 }
+\arguments{
+\item{data}{data frame input in the upper function}
+
+\item{age}{age string or character input in the upper function}
+
+\item{pop}{pop string or character input in the upper function}
+
+\item{deaths}{deaths string or character input in the upper function}
+}
+\value{
+data frame with numeric pop and deaths columns
+}
 \description{
-Title
+Checks inputs data, age, pop, and deaths to make sure they are valid.
 }

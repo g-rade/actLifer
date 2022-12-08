@@ -1,13 +1,13 @@
-#' Title
+#' Error Handling Function
 #'
-#' @param data
-#' @param age
-#' @param pop
-#' @param deaths
-#' @import dplyr
-#' @return
+#' Checks inputs data, age, pop, and deaths to make sure they are valid.
 #'
-#' @examples
+#' @param data data frame input in the upper function
+#' @param age age string or character input in the upper function
+#' @param pop pop string or character input in the upper function
+#' @param deaths deaths string or character input in the upper function
+#' @return data frame with numeric pop and deaths columns
+#'
 input_check <- function(data, age, pop, deaths) {
   #0) Check arg types - age,pop,deaths = "strings" and data is a df or tbl
   if ((typeof(age) != "string" & typeof(age) != "character" )|
@@ -30,17 +30,13 @@ input_check <- function(data, age, pop, deaths) {
     warning("coercing column(s) to type numeric")
     #3) If wrong type, coerce
     if (col_types[pop] != "numeric") {
-      data[pop] <- as.numeric(factor(data[pop]))
+      data[pop] <- as.numeric(unlist(data[pop]))
     }
     if (col_types[deaths] != "numeric") {
-      data[deaths] <- as.numeric(factor(data[deaths]))
+      data[deaths] <- as.numeric(unlist(data[deaths]))
     }
   }
   #3) Check length of cols
-  if () {
-
-  }
-  print(typeof(data[pop][1]))
   return(data)
 
 }
