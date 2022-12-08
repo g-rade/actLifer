@@ -90,7 +90,10 @@ All of the functions take in a dataset that has columns for age group ($x$), dea
   + `includeAllSteps`, `includeCDR`, and `includePS` are all `TRUE` by default
   
 ```{r}
-head(lifetable(mortality2, age_group, population, deaths))
+example <- lifetable(mortality2, age_group, population, deaths)
+
+example[1:5,]
+
 ```
 
 
@@ -112,6 +115,6 @@ Each of the included data sets include an age group variable, a population varia
 Here's what the first five rows of `mortality2` look like. 
 
 ```{r}
-head(mortality2)
+mortality2[1:5,]
 ```
 
