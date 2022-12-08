@@ -24,5 +24,5 @@ Adds a new column called PersonYears to the dataset that was input.
 PersonYears represents the number of years lived at age x based on the number surviving to age x.
 }
 \examples{
-person_years(mortality, age_group, population, deaths)
+person_years(mortality, "age_group", "population", "deaths")
 }

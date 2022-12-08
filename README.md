@@ -65,7 +65,7 @@ head(mortality2)
 ## Use the lifetable function to make a custom life table with just
 ## CentralDeathRate, PropToSurvive, and LifeExpectancy by setting includeAllSteps = FALSE
 
-lifetable(mortality2, age_group, population, deaths, FALSE, TRUE, TRUE)
+lifetable(mortality2, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 #> # A tibble: 85 × 6
 #>    age_group deaths population CentralDeathRate PropToSurvive LifeExpectancy
 #>    <chr>      <dbl>      <dbl>            <dbl>         <dbl>          <dbl>
@@ -83,7 +83,7 @@ lifetable(mortality2, age_group, population, deaths, FALSE, TRUE, TRUE)
 
 
 ## Or show everything by setting includeAllSteps=TRUE, includeCDR=TRUE, and includePS=TRUE which are the default values
-lifetable(mortality2, age_group, population, deaths)
+lifetable(mortality2, "age_group", "population", "deaths")
 #> # A tibble: 85 × 11
 #>    age_group deaths population Central…¹ Condi…² Condi…³ Numbe…⁴ PropT…⁵ Perso…⁶
 #>    <chr>      <dbl>      <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
