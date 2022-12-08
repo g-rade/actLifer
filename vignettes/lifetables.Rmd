@@ -20,7 +20,9 @@ knitr::opts_chunk$set(
 library(lifetables)
 ```
 
+
 ![](hex-lifetables.png){width=30%}
+
 
 The lifetables package contains functions to create actuarial life tables and three datasets ready to be made into a life table. Each mathematical step in transforming mortality data into life expectancy has a corresponding function, which builds the table up to that step. The datasets have been prepared are are ready to use in our functions. 
 
