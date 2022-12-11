@@ -24,5 +24,5 @@ Adds a new column called TotalYears to the dataset that was input.
 TotalYears is the number of years lived from age x onwards.
 }
 \examples{
-total_years_lived(mortality, "age_group", "population", "deaths")
+total_years_lived(mortality2, "age_group", "population", "deaths")
 }

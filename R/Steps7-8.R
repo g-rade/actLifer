@@ -16,7 +16,7 @@
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PersonYears, and TotalYears.
 #' @export
 #'
-#' @examples total_years_lived(mortality, "age_group", "population", "deaths")
+#' @examples total_years_lived(mortality2, "age_group", "population", "deaths")
 total_years_lived <- function(data, age, pop, deaths) {
   data <- data %>%
     person_years(., age, pop, deaths) %>%
@@ -40,7 +40,7 @@ total_years_lived <- function(data, age, pop, deaths) {
 #' ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PersonYears, TotalYears, and LifeExpectancy.
 #' @export
 #'
-#' @examples life_expectancy(mortality, "age_group", "population", "deaths")
+#' @examples life_expectancy(mortality2, "age_group", "population", "deaths")
 life_expectancy <- function(data, age, pop, deaths) {
   data <- data %>%
     total_years_lived(., age, pop, deaths) %>%

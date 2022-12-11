@@ -3,6 +3,8 @@
 
 # lifetables
 
+<img align="right" width="150" height="175" src="vignettes/hex-lifetables.png">
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml)

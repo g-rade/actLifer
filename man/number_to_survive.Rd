@@ -25,5 +25,5 @@ NumberToSurvive represents the number of people living at the beginning of the g
 using an arbitrary 100,000 people for the first age group in the table.
 }
 \examples{
-number_to_survive(mortality, "age_group", "population", "deaths")
+number_to_survive(mortality2, "age_group", "population", "deaths")
 }
