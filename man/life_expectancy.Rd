@@ -24,5 +24,9 @@ Adds a new column called LifeExpectancy to the dataset that was input.
 LifeExpectancy is how many more years we expect a person of age x to live.
 }
 \examples{
-life_expectancy(mortality, "age_group", "population", "deaths")
+# This function will add the ConditionalProbDeath, ConditionalProbLife,
+# NumberToSurvive, PropToSurvive, PersonYears, TotalYears, and LifeExpectancy
+# columns to the dataset.
+# This will be a full lifetable
+life_expectancy(mortality2, "age_group", "population", "deaths")
 }

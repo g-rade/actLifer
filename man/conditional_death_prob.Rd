@@ -24,5 +24,6 @@ This column represents the probability of death given the age group for each age
 In other words, the probability a person in a given age group will die before their next birthday.
 }
 \examples{
-conditional_death_prob(mortality, "age_group", "population", "deaths")
+# This function will add a ConditionalProbDeath column to the dataset
+conditional_death_prob(mortality2, "age_group", "population", "deaths")
 }

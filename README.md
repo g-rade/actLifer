@@ -3,6 +3,8 @@
 
 # lifetables
 
+<img align="right" width="150" height="175" src="vignettes/hex-lifetables.png">
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml)
@@ -13,17 +15,8 @@ based on mortality data, and ultimately calculates life expectancy from
 data on annual deaths for given ages/age groups. This package also
 contains mortality data from CDC wonder.
 
-## Target audience
-
-Our target audience for this package are actuaries, epidemiologists, or
-generally any data scientists working with mortality data.
-
-## R package proposal
-
-We are still working on an R package that has a function for creating
-lifetables from age-group mortality data, and some included lifetables.
-We now want to include functions that will result in different
-combinations of columns from a full lifetable.
+This package will be useful for actuaries, epidemiologists, or any data
+scientists working with mortality data.
 
 ## Installation
 

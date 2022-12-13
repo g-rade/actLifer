@@ -11,7 +11,9 @@
 #' @return Data frame that was input with an added CentralDeathRate column.
 #' @export
 #'
-#' @examples central_death_rate(mortality, "age_group", "population", "deaths")
+#' @examples
+#' # This function adds a CentralDeathRate column to the dataset
+#' central_death_rate(mortality2, "age_group", "population", "deaths")
 central_death_rate <- function(data, age, pop, deaths){
   data <- input_check(data, age, pop, deaths)
   data <- data %>%
@@ -33,7 +35,9 @@ central_death_rate <- function(data, age, pop, deaths){
 #' @return Data frame that was input with an added column, ConditionalProbDeath.
 #' @export
 #'
-#' @examples conditional_death_prob(mortality, "age_group", "population", "deaths")
+#' @examples
+#' # This function will add a ConditionalProbDeath column to the dataset
+#' conditional_death_prob(mortality2, "age_group", "population", "deaths")
 conditional_death_prob <- function(data, age, pop, deaths){
   data <- input_check(data, age, pop, deaths)
   data <- data %>%
@@ -58,7 +62,10 @@ conditional_death_prob <- function(data, age, pop, deaths){
 #' In other words, we are doing the "steps" up to the conditional probability of survival.
 #' @export
 #'
-#' @examples conditional_life_prob(mortality, "age_group", "population", "deaths")
+#' @examples
+#' # This function will add the ConditionalProbDeath and ConditionalProbLife columns
+#' # to the dataset
+#' conditional_life_prob(mortality2, "age_group", "population", "deaths")
 conditional_life_prob <- function(data, age, pop, deaths){
   data <- data %>%
     conditional_death_prob(., age, pop, deaths) %>%

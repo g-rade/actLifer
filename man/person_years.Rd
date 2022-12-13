@@ -24,5 +24,7 @@ Adds a new column called PersonYears to the dataset that was input.
 PersonYears represents the number of years lived at age x based on the number surviving to age x.
 }
 \examples{
-person_years(mortality, "age_group", "population", "deaths")
+# This function will add the ConditionalProbDeath, ConditionalProbLife,
+# NumberToSurvive, PropToSurvive, and PersonYears columns to the dataset
+person_years(mortality2, "age_group", "population", "deaths")
 }

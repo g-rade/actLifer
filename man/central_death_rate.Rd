@@ -23,5 +23,6 @@ Adds a new column called CentralDeathRate to the dataset that was input.
 This column represents the central death rate of each age group - deaths/population.
 }
 \examples{
-central_death_rate(mortality, "age_group", "population", "deaths")
+# This function adds a CentralDeathRate column to the dataset
+central_death_rate(mortality2, "age_group", "population", "deaths")
 }
