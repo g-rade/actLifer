@@ -19,10 +19,6 @@ htmltools::img(src = knitr::image_uri("hex-lifetables.png"),
 alt = 'logo', style = 'position:absolute; top:0; right:0; padding:30px; width: 160px; height: 160px; border: 0')
 ```
 
-```{r, echo=FALSE, out.width=100, fig.align="right"}
-#knitr::include_graphics("hex-lifetables.png")
-```
-
 ### Grace Rade, Maeve Tyler-Penny, Julia Ting
 
 ```{r setup}
