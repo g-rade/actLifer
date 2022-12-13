@@ -24,5 +24,8 @@ Adds a new column called TotalYears to the dataset that was input.
 TotalYears is the number of years lived from age x onwards.
 }
 \examples{
+# This function will add the ConditionalProbDeath, ConditionalProbLife,
+# NumberToSurvive, PropToSurvive, PersonYearsm and TotalYears columns to the
+# dataset
 total_years_lived(mortality2, "age_group", "population", "deaths")
 }

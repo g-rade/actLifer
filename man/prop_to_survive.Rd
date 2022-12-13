@@ -25,5 +25,7 @@ Adds a new column called PropToSurvive to the dataset that was input.
 PropToSurvive is the proportion surviving to age x
 }
 \examples{
+# This function will add the ConditionalProbDeath, ConditionalProbLife,
+# NumberToSbrvivem and PropToSurvive columns to the dataset
 prop_to_survive(mortality2, "age_group", "population", "deaths")
 }
