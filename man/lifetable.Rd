@@ -41,8 +41,9 @@ Allows the user to add in the central death rate and proportion surviving to age
 Allows the user to omit accessory columns which are used to calculate life expectancy.
 }
 \examples{
-Running lifetable() and choosing not to include CentralDeathRate and
-ProportionToSurvive (optional columns) in the output dataset
+
+# Running lifetable() and choosing not to include CentralDeathRate and
+# ProportionToSurvive (optional columns) in the output dataset
 
 lifetable(mortality2, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 }

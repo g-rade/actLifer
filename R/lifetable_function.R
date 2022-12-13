@@ -17,8 +17,10 @@
 #' @return Lifetable
 #' @export
 #'
-#' @examples Running lifetable() and choosing not to include CentralDeathRate and
-#' ProportionToSurvive (optional columns) in the output dataset
+#' @examples
+#'
+#' # Running lifetable() and choosing not to include CentralDeathRate and
+#' # ProportionToSurvive (optional columns) in the output dataset
 #'
 #' lifetable(mortality2, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 lifetable <- function(data, age, pop, deaths, includeAllSteps=TRUE, includeCDR=TRUE, includePS=TRUE, ...) {

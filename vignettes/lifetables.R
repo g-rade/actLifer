@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -7,7 +7,7 @@ knitr::opts_chunk$set(
 ## ---- echo = FALSE------------------------------------------------------------
 library(htmltools)
 htmltools::img(src = knitr::image_uri("hex-lifetables.png"),
-alt = 'logo', style = 'position:absolute; top:0; right:0; padding:30px; width: 160px; height: 160px; border: 0')
+alt = 'logo', style = 'position:absolute; top:0; right:0; padding:30px; width: 160px; height: 160px; border:0')
 
 ## ----setup--------------------------------------------------------------------
 library(lifetables)

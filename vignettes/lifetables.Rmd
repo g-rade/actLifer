@@ -6,7 +6,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-```{r, include = FALSE}
+```{r include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 ```{r, echo = FALSE}
 library(htmltools)
 htmltools::img(src = knitr::image_uri("hex-lifetables.png"),
-alt = 'logo', style = 'position:absolute; top:0; right:0; padding:30px; width: 160px; height: 160px; border: 0')
+alt = 'logo', style = 'position:absolute; top:0; right:0; padding:30px; width: 160px; height: 160px; border:0')
 ```
 
 ### Grace Rade, Maeve Tyler-Penny, Julia Ting
@@ -81,7 +81,7 @@ All of the functions take in a dataset that has columns for age group ($x$), dea
   
   + This function will output a complete life table, without the added customization of the `lifetable()` function. 
   
-* `lifetable()`: Outputs a complete lifetable with the ability to customize which of the optional columns are included, and add extra grouping variables. 
+* `lifetable()`: Outputs a complete lifetable with the ability to customize which of the optional columns are included, and add extra grouping variables.
 
   + if `includeAllSteps = TRUE`, the lifetable will include `CentralDeathRate` and `PropToSurvive` in the final output
   
