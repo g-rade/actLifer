@@ -8,6 +8,24 @@ lifetable_ref <- tribble(
   "2 years", 1046, 3992154, 0.0002620139403, 0.0002619796192, 0.9997380204, 99379.30449, 0.9937930449, 99366.28681, 7388902.744, 74.35051777
 )
 
+tbl_missing_col <- tribble(
+  ~years, ~mortality, ~population,
+  "< 1 year", 23161, 3970145,
+  "1 year", 1568, 3995008,
+  "2 years", 1046, 3992154
+)
+
+tbl_char <- tribble(
+  ~age_group, ~deaths, ~population,
+  "< 1 year", "23161", "3970145",
+  "1 year", "1568", "3995008",
+  "2 years", "1046", "3992154"
+)
+
+mortality_matrix <- matrix(c(1,2,3,4,5,6,7,8,9), ncol = 3, byrow = FALSE,
+                 dimnames = list(c("one", "two", "three"),
+                   c("age_group","deaths", "population")))
+
 test_that("central_death_rate works - length", {
   mortality3 <- central_death_rate(mortality2, "age_group", "population", "deaths")
   expect_equal(length(mortality3$CentralDeathRate), length(mortality3$age_group))
@@ -18,7 +36,19 @@ test_that("conditional_death_prob works", {
   expect_equal(mortality_new$ConditionalProbDeath[1], 0.005816824892)
 })
 
-test_that("lifetables works", {
+test_that("lifetable function works", {
   lifetable <- lifetable(mortality2, "age_group", "population", "deaths")
   expect_equal(head(lifetable, 3), lifetable_ref)
+})
+
+test_that("column type warning", {
+  expect_warning(lifetable(tbl_char, "age_group", "population", "deaths"))
+})
+
+test_that("columns exist error", {
+  expect_error(lifetable(tbl_missing_col, "age_group", "population", "deaths"))
+})
+
+test_that("input not df or tbl error", {
+  expect_error(lifetable(mortality_matrix, "age_group", "population", "deaths"))
 })
