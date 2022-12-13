@@ -18,7 +18,6 @@
 #' @export
 #'
 #' @examples
-#'
 #' # Running lifetable() and choosing not to include CentralDeathRate and
 #' # ProportionToSurvive (optional columns) in the output dataset
 #'
