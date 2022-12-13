@@ -42,7 +42,8 @@ test_that("lifetable function works", {
 })
 
 test_that("column type warning", {
-  expect_warning(lifetable(tbl_char, "age_group", "population", "deaths"))
+  expect_warning(out<- lifetable(tbl_char, "age_group", "population", "deaths"))
+  expect_equal(sapply(out, class), sapply(lifetable_ref, class))
 })
 
 test_that("columns exist error", {
