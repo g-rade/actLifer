@@ -6,7 +6,6 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -15,6 +14,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, echo = FALSE}
+library(htmltools)
 htmltools::img(src = knitr::image_uri("hex-lifetables.png"),
 alt = 'logo', style = 'position:absolute; top:0; right:0; padding:30px; width: 160px; height: 160px; border: 0')
 ```
