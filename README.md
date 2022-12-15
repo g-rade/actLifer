@@ -25,7 +25,7 @@ You can install the development version of lifetables from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("g-rade/lifetables")
+devtools::install_github("g-rade/lifetables", build_vignettes=TRUE)
 ```
 
 ## How To Use ‘lifetables’
