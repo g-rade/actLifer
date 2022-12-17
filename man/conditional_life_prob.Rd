@@ -21,7 +21,8 @@ In other words, we are doing the "steps" up to the conditional probability of su
 }
 \description{
 Adds a new column called ConditionalProbLife to the dataset that was input.
-ConditionalProbLife column contains the probabilities of surviving given age group.
+ConditionalProbLife column contains the probabilities of surviving for each given age group.
+In other words, this is the probability of someone surviving to their next birthday.
 }
 \examples{
 # This function will add the ConditionalProbDeath and ConditionalProbLife columns

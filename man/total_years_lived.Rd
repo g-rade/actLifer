@@ -21,7 +21,7 @@ ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PersonYears, and Tot
 }
 \description{
 Adds a new column called TotalYears to the dataset that was input.
-TotalYears is the number of years lived from age x onwards.
+TotalYears is the number of years lived from age zero to age x.
 }
 \examples{
 # This function will add the ConditionalProbDeath, ConditionalProbLife,

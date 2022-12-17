@@ -4,7 +4,7 @@
 #' Total Years Lived From Age x
 #'
 #' Adds a new column called TotalYears to the dataset that was input.
-#' TotalYears is the number of years lived from age x onwards.
+#' TotalYears is the number of years lived from age zero to age x.
 #'
 #' @param data The mortality dataset, includes an age grouping variable,
 #' @param age The age grouping variable, must be categorical
@@ -32,7 +32,8 @@ total_years_lived <- function(data, age, pop, deaths) {
 #' Life Expectancy of Age x
 #'
 #' Adds a new column called LifeExpectancy to the dataset that was input.
-#' LifeExpectancy is how many more years we expect a person of age x to live.
+#' LifeExpectancy is how many more years we expect a person of age x to live beyond
+#' their current age.
 #'
 #' @param data The mortality dataset, includes an age grouping variable,
 #' @param age The age grouping variable, must be categorical

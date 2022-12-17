@@ -50,7 +50,8 @@ conditional_death_prob <- function(data, age, pop, deaths){
 #' Conditional Probability of Survival at Age x
 #'
 #' Adds a new column called ConditionalProbLife to the dataset that was input.
-#' ConditionalProbLife column contains the probabilities of surviving given age group.
+#' ConditionalProbLife column contains the probabilities of surviving for each given age group.
+#' In other words, this is the probability of someone surviving to their next birthday.
 #'
 #'
 #' @param data The mortality dataset, includes an age grouping variable

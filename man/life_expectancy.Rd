@@ -21,7 +21,8 @@ ConditionalProbDeath, ConditionalProbLife, NumberToSurvive, PersonYears, TotalYe
 }
 \description{
 Adds a new column called LifeExpectancy to the dataset that was input.
-LifeExpectancy is how many more years we expect a person of age x to live.
+LifeExpectancy is how many more years we expect a person of age x to live beyond
+their current age.
 }
 \examples{
 # This function will add the ConditionalProbDeath, ConditionalProbLife,

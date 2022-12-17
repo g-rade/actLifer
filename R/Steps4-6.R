@@ -1,7 +1,7 @@
 #' The Number of People to Survive to Age x
 #'
 #' Adds a new column called NumberToSurvive to the dataset that was input.
-#' NumberToSurvive represents the number of people living at the beginning of the given age interval.
+#' NumberToSurvive represents the number of people living at the beginning of the given age interval,
 #' using an arbitrary 100,000 people for the first age group in the table.
 #'
 #' @param data The mortality dataset, includes an age grouping variable,
