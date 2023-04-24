@@ -5,9 +5,9 @@
 \alias{mortality}
 \title{A sample mortality data}
 \format{
-A data frame with 13 row of 3 columns representing the US population
+A data frame with 85 rows of 3 columns representing the US population
 at mulit-year different age groups with which we use to make a life table.
-This data is from the year 2016
+This data is from the year 2018
 \describe{
 \item{age_group}{Categorical variable identifying each age group}
 \item{deaths}{the mid-year number of deaths in each age group}
@@ -15,7 +15,7 @@ This data is from the year 2016
 }
 }
 \source{
-\url{https://wonder.cdc.gov/controller/datarequest/D140;jsessionid=3CDDD721939CA32630B8DCAFE69B}
+\url{https://wonder.cdc.gov/controller/datarequest/D158;jsessionid=F5D6519F5A7CF356AF892B999DD0}
 }
 \usage{
 mortality

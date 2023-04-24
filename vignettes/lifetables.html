@@ -353,13 +353,6 @@ functions.</p>
 </div>
 <div id="inspiriation" class="section level2">
 <h2>Inspiriation</h2>
-<p>This package was inspired by a research experience. Grace was
-assisting a professor in gathering state-level life expectancy data for
-different racial-sex groups. While nationwide life expectancy data is
-published by the CDC annually, state-level life expectancy is incredibly
-difficult to find, for both statewide populations and demographic
-subgroups. However, mortality data is widely available through state
-government reports and the CDC Wonder Database.</p>
 <p>Mathematically speaking, mortality data is the first step in
 calculating life expectancy. There are several intermediate calculations
 between the number of deaths at a given age and life expectancy, and
@@ -463,17 +456,16 @@ will not be included in the dataset</p></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>example <span class="ot">&lt;-</span> <span class="fu">lifetable</span>(mortality2, <span class="st">&quot;age_group&quot;</span>, <span class="st">&quot;population&quot;</span>, <span class="st">&quot;deaths&quot;</span>)</span></code></pre></div>
 <pre><code>#&gt; # A tibble: 5 × 11
-#&gt;   age_g…¹ deaths popul…² Centr…³ Condi…⁴ Condi…⁵ Numbe…⁶ PropT…⁷ Perso…⁸ Total…⁹
-#&gt;   &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-#&gt; 1 &lt; 1 ye…  23161 3970145 5.83e-3 5.82e-3   0.994 100000    1      99709.  7.59e6
-#&gt; 2 1 year    1568 3995008 3.92e-4 3.92e-4   1.00   99418.   0.994  99399.  7.49e6
-#&gt; 3 2 years   1046 3992154 2.62e-4 2.62e-4   1.00   99379.   0.994  99366.  7.39e6
-#&gt; 4 3 years    791 3982074 1.99e-4 1.99e-4   1.00   99353.   0.994  99343.  7.29e6
-#&gt; 5 4 years    640 3987656 1.60e-4 1.60e-4   1.00   99334.   0.993  99326.  7.19e6
-#&gt; # … with 1 more variable: LifeExpectancy &lt;dbl&gt;, and abbreviated variable names
-#&gt; #   ¹​age_group, ²​population, ³​CentralDeathRate, ⁴​ConditionalProbDeath,
-#&gt; #   ⁵​ConditionalProbLife, ⁶​NumberToSurvive, ⁷​PropToSurvive, ⁸​PersonYears,
-#&gt; #   ⁹​TotalYears</code></pre>
+#&gt;   age_group deaths population CentralDeathRate ConditionalProbDeath
+#&gt;   &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;                &lt;dbl&gt;
+#&gt; 1 &lt; 1 year   23161    3970145         0.00583              0.00582 
+#&gt; 2 1 year      1568    3995008         0.000392             0.000392
+#&gt; 3 2 years     1046    3992154         0.000262             0.000262
+#&gt; 4 3 years      791    3982074         0.000199             0.000199
+#&gt; 5 4 years      640    3987656         0.000160             0.000160
+#&gt; # ℹ 6 more variables: ConditionalProbLife &lt;dbl&gt;, NumberToSurvive &lt;dbl&gt;,
+#&gt; #   PropToSurvive &lt;dbl&gt;, PersonYears &lt;dbl&gt;, TotalYears &lt;dbl&gt;,
+#&gt; #   LifeExpectancy &lt;dbl&gt;</code></pre>
 <p>Calculating life extpectancy is an iterative process, building on the
 previous intermediate calculations. Each of the functions will call the
 function of the previous step as it executes, meaning that the output
@@ -488,8 +480,8 @@ called in addition to the other functions.</p>
 <p>The package includes three datasets, all sourced from the CDC Wonder
 Database (<a href="https://wonder.cdc.gov/ucd-icd10.html" class="uri">https://wonder.cdc.gov/ucd-icd10.html</a>).</p>
 <ul>
-<li><p><code>mortality</code> contains data from the year 2016 with
-multi-year age groups</p></li>
+<li><p><code>mortality</code> contains data from the year 2018 with
+single-year age groups</p></li>
 <li><p><code>mortality2</code> contains data from the year 2016 with
 single-year age gaps</p></li>
 <li><p><code>mortality3</code> contains data from the year 2016 with
@@ -562,7 +554,7 @@ CDC uses to mean biological sex (Male, Female)</li>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 3 years   Male      468    2034666 gender               133.</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 4 years   Female    298    1950127 gender               132.</span></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 4 years   Male      342    2037529 gender               131.</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 160 more rows</span></span></code></pre></div>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 160 more rows</span></span></code></pre></div>
 <p>The output is a tibble data frame that has calculated life expectancy
 for each gender. From this we can see any differences in life expectancy
 between males and females.</p>
@@ -580,21 +572,21 @@ intervals. We can use this dataset to see if life expectancy changes
 dramatically from one interval to the next.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lifetable</span>(mortality2, <span class="st">&quot;age_group&quot;</span>, <span class="st">&quot;population&quot;</span>, <span class="st">&quot;deaths&quot;</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 85 × 9</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    age_group deaths population Conditi…¹ Condi…² Numbe…³ Perso…⁴ Total…⁵ LifeE…⁶</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 &lt; 1 year   23161    3970145  0.00582    0.994 100000   99709.  7.59e6    75.9</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 1 year      1568    3995008  0.000392   1.00   99418.  99399.  7.49e6    75.3</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2 years     1046    3992154  0.000262   1.00   99379.  99366.  7.39e6    74.4</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 3 years      791    3982074  0.000199   1.00   99353.  99343.  7.29e6    73.4</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 4 years      640    3987656  0.000160   1.00   99334.  99326.  7.19e6    72.4</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 5 years      546    4032515  0.000135   1.00   99318.  99311.  7.09e6    71.4</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 6 years      488    4029655  0.000121   1.00   99304.  99298.  6.99e6    70.4</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 7 years      511    4029991  0.000127   1.00   99292.  99286.  6.89e6    69.4</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 8 years      483    4159114  0.000116   1.00   99280.  99274.  6.79e6    68.4</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 9 years      462    4178524  0.000111   1.00   99268.  99263.  6.69e6    67.4</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 75 more rows, and abbreviated variable names ¹​ConditionalProbDeath,</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   ²​ConditionalProbLife, ³​NumberToSurvive, ⁴​PersonYears, ⁵​TotalYears,</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   ⁶​LifeExpectancy</span></span></code></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    age_group deaths population ConditionalProbDeath ConditionalProbLife</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;                &lt;dbl&gt;               &lt;dbl&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1 &lt; 1 year   23161    3970145             0.00582                0.994</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2 1 year      1568    3995008             0.000392               1.00 </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3 2 years     1046    3992154             0.000262               1.00 </span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4 3 years      791    3982074             0.000199               1.00 </span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5 4 years      640    3987656             0.000160               1.00 </span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6 5 years      546    4032515             0.000135               1.00 </span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7 6 years      488    4029655             0.000121               1.00 </span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8 7 years      511    4029991             0.000127               1.00 </span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9 8 years      483    4159114             0.000116               1.00 </span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10 9 years      462    4178524             0.000111               1.00 </span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 75 more rows</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # ℹ 4 more variables: NumberToSurvive &lt;dbl&gt;, PersonYears &lt;dbl&gt;,</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   TotalYears &lt;dbl&gt;, LifeExpectancy &lt;dbl&gt;</span></span></code></pre></div>
 <p>From the abbreviated output, we can see that life expectancy does not
 change dramatically from year to year.</p>
 </div>

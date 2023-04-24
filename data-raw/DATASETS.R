@@ -3,10 +3,11 @@ library(dplyr)
 library(purrr)
 library(tibble)
 
-mortality <- read.delim("data-raw/mortality2016.txt") %>%
-  select(Age.Group, Deaths, Population) %>%
+mortality <- read.delim("data-raw/mortality2018txt.txt") %>%
+  select(Single.Year.Ages, Deaths, Population) %>%
   clean_names() %>%
   filter(!is.na(deaths)) %>%
+  rename(age_group = "single_year_ages") %>%
   mutate(age_group = ifelse(age_group == "", "Not Stated", age_group)) %>%
   filter(age_group != "Not Stated",  deaths != "Not Applicable", population != "Not Applicable") %>%
   mutate(deaths = as.numeric(deaths), population = as.numeric(population)) %>%
