@@ -3,7 +3,7 @@
 
 # lifetables
 
-<img align="right" width="150" height="175" src="vignettes/hex-lifetables.png">
+<img align="right" width="150" height="175" src="man/figures/hex-lifetables.png">
 
 <!-- badges: start -->
 
@@ -26,6 +26,20 @@ You can install the development version of lifetables from
 ``` r
 # install.packages("devtools")
 devtools::install_github("g-rade/lifetables", build_vignettes=TRUE)
+```
+
+You can install the released version of lifetables from CRAN:
+
+``` r
+install.packages("lifetables")
+#> Installing package into '/private/var/folders/kz/txl35lss1dlct1tr99k5415h0000gp/T/RtmpmZsobV/temp_libpath9f72417209d9'
+#> (as 'lib' is unspecified)
+#> Warning: package 'lifetables' is not available for this version of R
+#> 
+#> A version of this package for your version of R might be available elsewhere,
+#> see the ideas at
+#> https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
+#> Warning: Perhaps you meant 'LifeTables' ?
 ```
 
 ## How To Use ‘lifetables’
@@ -72,28 +86,28 @@ lifetable(mortality2, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 #>  8 7 years      511    4029991         0.000127         0.993           69.4
 #>  9 8 years      483    4159114         0.000116         0.993           68.4
 #> 10 9 years      462    4178524         0.000111         0.993           67.4
-#> # … with 75 more rows
+#> # ℹ 75 more rows
 
 
 ## Or show everything by setting includeAllSteps=TRUE, includeCDR=TRUE, and includePS=TRUE which are the default values
 lifetable(mortality2, "age_group", "population", "deaths")
 #> # A tibble: 85 × 11
-#>    age_group deaths population Central…¹ Condi…² Condi…³ Numbe…⁴ PropT…⁵ Perso…⁶
-#>    <chr>      <dbl>      <dbl>     <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
-#>  1 < 1 year   23161    3970145  0.00583  5.82e-3   0.994 100000    1      99709.
-#>  2 1 year      1568    3995008  0.000392 3.92e-4   1.00   99418.   0.994  99399.
-#>  3 2 years     1046    3992154  0.000262 2.62e-4   1.00   99379.   0.994  99366.
-#>  4 3 years      791    3982074  0.000199 1.99e-4   1.00   99353.   0.994  99343.
-#>  5 4 years      640    3987656  0.000160 1.60e-4   1.00   99334.   0.993  99326.
-#>  6 5 years      546    4032515  0.000135 1.35e-4   1.00   99318.   0.993  99311.
-#>  7 6 years      488    4029655  0.000121 1.21e-4   1.00   99304.   0.993  99298.
-#>  8 7 years      511    4029991  0.000127 1.27e-4   1.00   99292.   0.993  99286.
-#>  9 8 years      483    4159114  0.000116 1.16e-4   1.00   99280.   0.993  99274.
-#> 10 9 years      462    4178524  0.000111 1.11e-4   1.00   99268.   0.993  99263.
-#> # … with 75 more rows, 2 more variables: TotalYears <dbl>,
-#> #   LifeExpectancy <dbl>, and abbreviated variable names ¹​CentralDeathRate,
-#> #   ²​ConditionalProbDeath, ³​ConditionalProbLife, ⁴​NumberToSurvive,
-#> #   ⁵​PropToSurvive, ⁶​PersonYears
+#>    age_group deaths population CentralDeathRate ConditionalProbDeath
+#>    <chr>      <dbl>      <dbl>            <dbl>                <dbl>
+#>  1 < 1 year   23161    3970145         0.00583              0.00582 
+#>  2 1 year      1568    3995008         0.000392             0.000392
+#>  3 2 years     1046    3992154         0.000262             0.000262
+#>  4 3 years      791    3982074         0.000199             0.000199
+#>  5 4 years      640    3987656         0.000160             0.000160
+#>  6 5 years      546    4032515         0.000135             0.000135
+#>  7 6 years      488    4029655         0.000121             0.000121
+#>  8 7 years      511    4029991         0.000127             0.000127
+#>  9 8 years      483    4159114         0.000116             0.000116
+#> 10 9 years      462    4178524         0.000111             0.000111
+#> # ℹ 75 more rows
+#> # ℹ 6 more variables: ConditionalProbLife <dbl>, NumberToSurvive <dbl>,
+#> #   PropToSurvive <dbl>, PersonYears <dbl>, TotalYears <dbl>,
+#> #   LifeExpectancy <dbl>
 ```
 
 ## Contributors
