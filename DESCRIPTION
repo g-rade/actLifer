@@ -5,7 +5,7 @@ Authors@R: c(
     person(
     given = "Grace", 
     family = "Rade", 
-    email = "grade@smith.edu", 
+    email = "grade03426@gmail.edu", 
     role = c("aut", "cre"), 
     comment = c(ORCID = "0000-0001-5319-1371")),
     person(
@@ -24,8 +24,8 @@ Authors@R: c(
 Maintainer: Grace Rade <grade03426@gmail.com>
 Description: `lifetables` contains data and functions that can be used to make 
   actuarial life tables. Each function adds a column to the inputted dataset for
-  each cintermediate calculation between mortality and life expectancy. Users can 
-  run aany of our functions to complete the life table up until that step, or run
+  each intermediate calculation between mortality rate and life expectancy. Users can 
+  run any of our functions to complete the life table up until that step, or run
   `lifetable()` to output a full life table that can be customized to remove optional 
   columns. 
 License: MIT + file LICENSE
