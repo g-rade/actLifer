@@ -17,7 +17,7 @@ This data is from the year 2016.
 }
 }
 \source{
-\url{https://wonder.cdc.gov/controller/datarequest/D76;jsessionid=25C6293B76930E14757A77946386}
+<https://wonder.cdc.gov
 }
 \usage{
 mortality3
