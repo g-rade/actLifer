@@ -5,7 +5,7 @@ Authors@R: c(
     person(
     given = "Grace", 
     family = "Rade", 
-    email = "grade03426@gmail.edu", 
+    email = "grade03426@gmail.com", 
     role = c("aut", "cre", "cph"), 
     comment = c(ORCID = "0000-0001-5319-1371")),
     person(
@@ -17,9 +17,9 @@ Authors@R: c(
     person(
     given = "Julia", 
     family = "Ting", 
-    email = "jting@smith.edu", 
+    email = "ting.y.julia@gmail.com", 
     role = "aut", 
-    comment = c(ORCID = "YOUR-ORCID-ID"))
+    comment = c(ORCID = "0009-0001-3838-6653"))
     )
 Maintainer: Grace Rade <grade03426@gmail.com>
 Description: `lifetables` contains data and functions that can be used to make 
