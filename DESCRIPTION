@@ -31,7 +31,7 @@ Description: `lifetables` contains data and functions that can be used to make
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 Depends: 
     R (>= 2.10), dplyr (>= 1.0.10)
 LazyData: true
