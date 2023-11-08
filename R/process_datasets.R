@@ -10,7 +10,7 @@
 #'   \item{deaths}{the mid-year number of deaths in each age group}
 #'   \item{population}{the US population of each age group}
 #' }
-#' @source <https://wonder.cdc.gov/controller/datarequest/D158;jsessionid=F5D6519F5A7CF356AF892B999DD0>
+#' @source <https://wonder.cdc.gov>
 "mortality"
 
 #' A sample mortality data
@@ -43,5 +43,5 @@
 #'   \item{population}{the US population of each age group}
 #'   \item{gender}{a categroical variable grouping the data into male and female}
 #' }
-#' @source <https://wonder.cdc.gov/controller/datarequest/D76;jsessionid=25C6293B76930E14757A77946386>
+#' @source <https://wonder.cdc.gov
 "mortality3"
