@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="`lifetables` contains data and functions that can be used to make 
   actuarial life tables. Each function adds a column to the inputted dataset for
-  each cintermediate calculation between mortality and life expectancy. Users can 
-  run aany of our functions to complete the life table up until that step, or run
+  each intermediate calculation between mortality rate and life expectancy. Users can 
+  run any of our functions to complete the life table up until that step, or run
   `lifetable()` to output a full life table that can be customized to remove optional 
   columns. ">
 <title>Creating Actuarial Life Tables • lifetables</title>
@@ -19,8 +19,8 @@
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Creating Actuarial Life Tables">
 <meta property="og:description" content="`lifetables` contains data and functions that can be used to make 
   actuarial life tables. Each function adds a column to the inputted dataset for
-  each cintermediate calculation between mortality and life expectancy. Users can 
-  run aany of our functions to complete the life table up until that step, or run
+  each intermediate calculation between mortality rate and life expectancy. Users can 
+  run any of our functions to complete the life table up until that step, or run
   `lifetable()` to output a full life table that can be customized to remove optional 
   columns. ">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -69,7 +69,7 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="lifetables">lifetables<a class="anchor" aria-label="anchor" href="#lifetables"></a>
 </h1></div>
-<p><img align="right" width="150" height="175" src="articles/hex-lifetables.png"></p>
+<p><img align="right" width="150" height="175" src="reference/figures/hex-lifetables.png"></p>
 <!-- badges: start -->
 
 <p>The <code>lifetables</code> package contains functions that create a life table based on mortality data, and ultimately calculates life expectancy from data on annual deaths for given ages/age groups. This package also contains mortality data from CDC wonder.</p>
@@ -81,11 +81,22 @@
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"g-rade/lifetables"</span>, build_vignettes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p>You can install the released version of lifetables from CRAN:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"lifetables"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Installing package into '/private/var/folders/kz/txl35lss1dlct1tr99k5415h0000gp/T/RtmpmZsobV/temp_libpath9f72417209d9'</span></span>
+<span><span class="co">#&gt; (as 'lib' is unspecified)</span></span>
+<span><span class="co">#&gt; Warning: package 'lifetables' is not available for this version of R</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A version of this package for your version of R might be available elsewhere,</span></span>
+<span><span class="co">#&gt; see the ideas at</span></span>
+<span><span class="co">#&gt; https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages</span></span>
+<span><span class="co">#&gt; Warning: Perhaps you meant 'LifeTables' ?</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="how-to-use-lifetables">How To Use ‘lifetables’<a class="anchor" aria-label="anchor" href="#how-to-use-lifetables"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://g-rade.github.io/lifetables/">lifetables</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: dplyr</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -127,28 +138,28 @@
 <span><span class="co">#&gt;  8 7 years      511    4029991         0.000127         0.993           69.4</span></span>
 <span><span class="co">#&gt;  9 8 years      483    4159114         0.000116         0.993           68.4</span></span>
 <span><span class="co">#&gt; 10 9 years      462    4178524         0.000111         0.993           67.4</span></span>
-<span><span class="co">#&gt; # … with 75 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 75 more rows</span></span>
 <span></span>
 <span></span>
 <span><span class="co">## Or show everything by setting includeAllSteps=TRUE, includeCDR=TRUE, and includePS=TRUE which are the default values</span></span>
 <span><span class="fu"><a href="reference/lifetable.html">lifetable</a></span><span class="op">(</span><span class="va">mortality2</span>, <span class="st">"age_group"</span>, <span class="st">"population"</span>, <span class="st">"deaths"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 85 × 11</span></span>
-<span><span class="co">#&gt;    age_group deaths population Central…¹ Condi…² Condi…³ Numbe…⁴ PropT…⁵ Perso…⁶</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 &lt; 1 year   23161    3970145  0.00583  5.82e-3   0.994 100000    1      99709.</span></span>
-<span><span class="co">#&gt;  2 1 year      1568    3995008  0.000392 3.92e-4   1.00   99418.   0.994  99399.</span></span>
-<span><span class="co">#&gt;  3 2 years     1046    3992154  0.000262 2.62e-4   1.00   99379.   0.994  99366.</span></span>
-<span><span class="co">#&gt;  4 3 years      791    3982074  0.000199 1.99e-4   1.00   99353.   0.994  99343.</span></span>
-<span><span class="co">#&gt;  5 4 years      640    3987656  0.000160 1.60e-4   1.00   99334.   0.993  99326.</span></span>
-<span><span class="co">#&gt;  6 5 years      546    4032515  0.000135 1.35e-4   1.00   99318.   0.993  99311.</span></span>
-<span><span class="co">#&gt;  7 6 years      488    4029655  0.000121 1.21e-4   1.00   99304.   0.993  99298.</span></span>
-<span><span class="co">#&gt;  8 7 years      511    4029991  0.000127 1.27e-4   1.00   99292.   0.993  99286.</span></span>
-<span><span class="co">#&gt;  9 8 years      483    4159114  0.000116 1.16e-4   1.00   99280.   0.993  99274.</span></span>
-<span><span class="co">#&gt; 10 9 years      462    4178524  0.000111 1.11e-4   1.00   99268.   0.993  99263.</span></span>
-<span><span class="co">#&gt; # … with 75 more rows, 2 more variables: TotalYears &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   LifeExpectancy &lt;dbl&gt;, and abbreviated variable names ¹​CentralDeathRate,</span></span>
-<span><span class="co">#&gt; #   ²​ConditionalProbDeath, ³​ConditionalProbLife, ⁴​NumberToSurvive,</span></span>
-<span><span class="co">#&gt; #   ⁵​PropToSurvive, ⁶​PersonYears</span></span></code></pre></div>
+<span><span class="co">#&gt;    age_group deaths population CentralDeathRate ConditionalProbDeath</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;                &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 &lt; 1 year   23161    3970145         0.00583              0.00582 </span></span>
+<span><span class="co">#&gt;  2 1 year      1568    3995008         0.000392             0.000392</span></span>
+<span><span class="co">#&gt;  3 2 years     1046    3992154         0.000262             0.000262</span></span>
+<span><span class="co">#&gt;  4 3 years      791    3982074         0.000199             0.000199</span></span>
+<span><span class="co">#&gt;  5 4 years      640    3987656         0.000160             0.000160</span></span>
+<span><span class="co">#&gt;  6 5 years      546    4032515         0.000135             0.000135</span></span>
+<span><span class="co">#&gt;  7 6 years      488    4029655         0.000121             0.000121</span></span>
+<span><span class="co">#&gt;  8 7 years      511    4029991         0.000127             0.000127</span></span>
+<span><span class="co">#&gt;  9 8 years      483    4159114         0.000116             0.000116</span></span>
+<span><span class="co">#&gt; 10 9 years      462    4178524         0.000111             0.000111</span></span>
+<span><span class="co">#&gt; # ℹ 75 more rows</span></span>
+<span><span class="co">#&gt; # ℹ 6 more variables: ConditionalProbLife &lt;dbl&gt;, NumberToSurvive &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   PropToSurvive &lt;dbl&gt;, PersonYears &lt;dbl&gt;, TotalYears &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   LifeExpectancy &lt;dbl&gt;</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="contributors">Contributors<a class="anchor" aria-label="anchor" href="#contributors"></a>
@@ -179,7 +190,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Grace Rade <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-5319-1371" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Grace Rade <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0001-5319-1371" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Maeve Tyler-Penny <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-9131-2004" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Julia Ting <br><small class="roles"> Author </small> <a href="https://orcid.org/YOUR-ORCID-ID" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
