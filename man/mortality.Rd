@@ -15,7 +15,7 @@ This data is from the year 2018
 }
 }
 \source{
-\url{https://wonder.cdc.gov}
+\url{https://wonder.cdc.gov/controller/datarequest/D158;jsessionid=F5D6519F5A7CF356AF892B999DD0}
 }
 \usage{
 mortality
