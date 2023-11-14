@@ -44,4 +44,5 @@ Suggests:
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 URL: https://github.com/g-rade/act_lifer,
-    https://g-rade.github.io/act_lifer/
+    https://g-rade.github.io/act_lifer/,
+    https://g-rade.github.io/actLifer/
