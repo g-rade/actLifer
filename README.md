@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# act)lifer
+# act_lifer
 
 <img align="right" width="150" height="175" src="man/figures/hex-actLifer.png">
 
