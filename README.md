@@ -1,13 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# act_lifer
+# act)lifer
 
 <img align="right" width="150" height="175" src="man/figures/hex-actLifer.png">
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/g-rade/act_lifer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/act_lifer/actions/workflows/R-CMD-check.yaml)
 [![R-CMD-check](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
