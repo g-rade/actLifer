@@ -1,13 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# act)lifer
+# actLifer
 
 <img align="right" width="150" height="175" src="man/figures/hex-actLifer.png">
 
 <!-- badges: start -->
-
-[![R-CMD-check](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The `actLifer` package contains functions that create a life table based
@@ -25,16 +23,16 @@ You can install the development version of actLifer from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("g-rade/actLifer", build_vignettes=TRUE)
+devtools::install_github("g-rade/actLifer")
 ```
 
-You can install the released version of actLifer from CRAN:
+You can install the reslease version of actLifer from CRAN with:
 
 ``` r
-# install.packages("actLifer")
+#install.packages("actLifer")
 ```
 
-## How To Use ‘actLifer’
+## How to use actLifer
 
 ``` r
 library(actLifer)
@@ -59,7 +57,6 @@ head(mortality2)
 #> 4 3 years      791    3982074
 #> 5 4 years      640    3987656
 #> 6 5 years      546    4032515
-
 
 ## Use the lifetable function to make a custom life table with just
 ## CentralDeathRate, PropToSurvive, and LifeExpectancy by setting includeAllSteps = FALSE

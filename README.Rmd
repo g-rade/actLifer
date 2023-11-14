@@ -13,18 +13,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-# act)lifer
+# actLifer
+
 <img align="right" width="150" height="175" src="man/figures/hex-actLifer.png">
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-
 The `actLifer` package contains functions that create a life table based on mortality data, and ultimately calculates life expectancy from data on annual deaths for given ages/age groups. This package also contains mortality data from CDC wonder. 
-
+ 
 This package will be useful for actuaries, epidemiologists, or any data scientists working with mortality data.
-
 
 ## Installation
 
@@ -32,22 +30,21 @@ You can install the development version of actLifer from [GitHub](https://github
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("g-rade/actLifer", build_vignettes=TRUE)
+devtools::install_github("g-rade/actLifer")
 ```
-
-You can install the released version of actLifer from CRAN:
+You can install the reslease version of actLifer from CRAN with:
 
 ```{r}
-# install.packages("actLifer")
+#install.packages("actLifer")
 ```
 
-## How To Use 'actLifer'
+## How to use actLifer
+
 ```{r}
 library(actLifer)
 
 ## Take a look at the mortality2 data fram
 head(mortality2)
-
 
 ## Use the lifetable function to make a custom life table with just
 ## CentralDeathRate, PropToSurvive, and LifeExpectancy by setting includeAllSteps = FALSE
@@ -57,8 +54,8 @@ lifetable(mortality2, "age_group", "population", "deaths", FALSE, TRUE, TRUE)
 
 ## Or show everything by setting includeAllSteps=TRUE, includeCDR=TRUE, and includePS=TRUE which are the default values
 lifetable(mortality2, "age_group", "population", "deaths")
-```
 
+```
 
 ## Contributors
 
