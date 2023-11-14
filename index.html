@@ -74,11 +74,11 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="actlifer">act)lifer<a class="anchor" aria-label="anchor" href="#actlifer"></a>
+<div class="page-header"><h1 id="actlifer">actLifer<a class="anchor" aria-label="anchor" href="#actlifer"></a>
 </h1></div>
 <p><img align="right" width="150" height="175" src="reference/figures/hex-actLifer.png"></p>
 <!-- badges: start -->
-
+<!-- badges: end -->
 <p>The <code>actLifer</code> package contains functions that create a life table based on mortality data, and ultimately calculates life expectancy from data on annual deaths for given ages/age groups. This package also contains mortality data from CDC wonder.</p>
 <p>This package will be useful for actuaries, epidemiologists, or any data scientists working with mortality data.</p>
 <div class="section level2">
@@ -87,13 +87,13 @@
 <p>You can install the development version of actLifer from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"g-rade/actLifer"</span>, build_vignettes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<p>You can install the released version of actLifer from CRAN:</p>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"g-rade/actLifer"</span><span class="op">)</span></span></code></pre></div>
+<p>You can install the reslease version of actLifer from CRAN with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("actLifer")</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co">#install.packages("actLifer")</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="how-to-use-actlifer">How To Use ‘actLifer’<a class="anchor" aria-label="anchor" href="#how-to-use-actlifer"></a>
+<h2 id="how-to-use-actlifer">How to use actLifer<a class="anchor" aria-label="anchor" href="#how-to-use-actlifer"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/g-rade/act_lifer" class="external-link">actLifer</a></span><span class="op">)</span></span>
@@ -118,7 +118,6 @@
 <span><span class="co">#&gt; 4 3 years      791    3982074</span></span>
 <span><span class="co">#&gt; 5 4 years      640    3987656</span></span>
 <span><span class="co">#&gt; 6 5 years      546    4032515</span></span>
-<span></span>
 <span></span>
 <span><span class="co">## Use the lifetable function to make a custom life table with just</span></span>
 <span><span class="co">## CentralDeathRate, PropToSurvive, and LifeExpectancy by setting includeAllSteps = FALSE</span></span>
@@ -202,12 +201,7 @@
 </ul>
 </div>
 
-<div class="dev-status">
-<h2 data-toc-skip>Dev status</h2>
-<ul class="list-unstyled">
-<li><a href="https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
-</ul>
-</div>
+
 
   </aside>
 </div>
