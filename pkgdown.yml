@@ -3,8 +3,8 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   actLifer: actLifer.html
-last_built: 2023-11-14T19:16Z
+last_built: 2023-11-14T19:18Z
 urls:
-  reference: https://g-rade.github.io/act_lifer/reference
-  article: https://g-rade.github.io/act_lifer/articles
+  reference: https://g-rade.github.io/actLifer/reference
+  article: https://g-rade.github.io/actLifer/articles
 
