@@ -1,4 +1,4 @@
-Package: lifetables
+Package: actLifer
 Title: Creating Actuarial Life Tables
 Version: 0.0.0.9000
 Authors@R: c(
@@ -27,7 +27,7 @@ Description: Contains data and functions that can be used to make
   each intermediate calculation between mortality rate and life expectancy. Users can 
   run any of our functions to complete the life table up until that step, or run
   `lifetable()` to output a full life table that can be customized to remove optional 
-  columns. 
+  columns.  
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -43,4 +43,5 @@ Suggests:
     htmltools
 Config/testthat/edition: 3
 VignetteBuilder: knitr
-URL: https://g-rade.github.io/lifetables/
+URL: https://github.com/g-rade/act_lifer,
+    https://g-rade.github.io/act_lifer/

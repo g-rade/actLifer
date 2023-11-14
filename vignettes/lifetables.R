@@ -6,10 +6,10 @@ knitr::opts_chunk$set(
 
 ## ---- echo = FALSE------------------------------------------------------------
 library(htmltools)
-htmltools::img(src = knitr::image_uri("hex-lifetables.png"), alt = 'logo', style = 'position:absolute; top:0; right:0; padding:10px; width: 100px; height: 100px; border:0')
+htmltools::img(src = knitr::image_uri("hex-act_lifer.png"), alt = 'logo', style = 'position:absolute; top:0; right:0; padding:10px; width: 100px; height: 100px; border:0')
 
 ## ----setup--------------------------------------------------------------------
-library(lifetables)
+library(act_lifer)
 
 ## -----------------------------------------------------------------------------
 example <- lifetable(mortality2, "age_group", "population", "deaths")

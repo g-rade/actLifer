@@ -1,8 +1,8 @@
 ---
-title: "lifetables"
+title: "actLifer"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{lifetables}
+  %\VignetteIndexEntry{actLifer}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,23 +15,23 @@ knitr::opts_chunk$set(
 
 ```{r, echo = FALSE}
 library(htmltools)
-htmltools::img(src = knitr::image_uri("hex-lifetables.png"), alt = 'logo', style = 'position:absolute; top:0; right:0; padding:10px; width: 100px; height: 100px; border:0')
+htmltools::img(src = knitr::image_uri("hex-actLifer2.png"), alt = 'logo', style = 'position:absolute; top:0; right:0; padding:10px; width: 100px; height: 100px; border:0')
 ```
 
 ### Grace Rade, Maeve Tyler-Penny, Julia Ting
 
 ```{r setup}
-library(lifetables)
+library(actLifer)
 ```
 
 
-The lifetables package contains functions to create actuarial life tables and three datasets ready to be made into a life table. Each mathematical step in transforming mortality data into life expectancy has a corresponding function, which builds the table up to that step. The datasets have been prepared are are ready to use in our functions. 
+The actLlifer package contains functions to create actuarial life tables and three datasets ready to be made into a life table. Each mathematical step in transforming mortality data into life expectancy has a corresponding function, which builds the table up to that step. The datasets have been prepared are are ready to use in our functions. 
 
 ## Inspiriation
 
 Mathematically speaking, mortality data is the first step in calculating life expectancy. There are several intermediate calculations between the number of deaths at a given age and life expectancy, and each step builds on the previous values. With this in mind, we created several functions that calculated each intermediate value that build a complete actuarial lifetable when combined. Lifetables can be rather easily created in a spreadsheet, but is a rather involved process in R. Our functions simplify the procedure of creating a lifetable into one function with the option to group by different categorical variables.  
 
-The lifetables package is a useful tool for anyone who works with mortality data, wants to calculate life expectancy, or wants to find any of the intermediate values between number of deaths and life expectancy. 
+The acLifer package is a useful tool for anyone who works with mortality data, wants to calculate life expectancy, or wants to find any of the intermediate values between number of deaths and life expectancy. 
 
 ## Functions
 

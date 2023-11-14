@@ -1,51 +1,44 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# lifetables
+# act)lifer
 
-<img align="right" width="150" height="175" src="man/figures/hex-lifetables.png">
+<img align="right" width="150" height="175" src="man/figures/hex-actLifer.png">
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/lifetables/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/g-rade/act_lifer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/act_lifer/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The `lifetables` package contains functions that create a life table
-based on mortality data, and ultimately calculates life expectancy from
-data on annual deaths for given ages/age groups. This package also
-contains mortality data from CDC wonder.
+The `actLifer` package contains functions that create a life table based
+on mortality data, and ultimately calculates life expectancy from data
+on annual deaths for given ages/age groups. This package also contains
+mortality data from CDC wonder.
 
 This package will be useful for actuaries, epidemiologists, or any data
 scientists working with mortality data.
 
 ## Installation
 
-You can install the development version of lifetables from
+You can install the development version of actLifer from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("g-rade/lifetables", build_vignettes=TRUE)
+devtools::install_github("g-rade/actLifer", build_vignettes=TRUE)
 ```
 
-You can install the released version of lifetables from CRAN:
+You can install the released version of actLifer from CRAN:
 
 ``` r
-install.packages("lifetables")
-#> Installing package into '/private/var/folders/kz/txl35lss1dlct1tr99k5415h0000gp/T/RtmpmZsobV/temp_libpath9f72417209d9'
-#> (as 'lib' is unspecified)
-#> Warning: package 'lifetables' is not available for this version of R
-#> 
-#> A version of this package for your version of R might be available elsewhere,
-#> see the ideas at
-#> https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
-#> Warning: Perhaps you meant 'LifeTables' ?
+# install.packages("actLifer")
 ```
 
-## How To Use ‘lifetables’
+## How To Use ‘actLifer’
 
 ``` r
-library(lifetables)
+library(actLifer)
 #> Loading required package: dplyr
 #> 
 #> Attaching package: 'dplyr'
