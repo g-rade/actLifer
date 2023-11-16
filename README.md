@@ -6,6 +6,10 @@
 <img align="right" width="150" height="175" src="man/figures/hex-actLifer.png">
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/g-rade/actLifer/actions/workflows/R-CMD-check.yaml)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/actLifer)](https://CRAN.R-project.org/package=actLifer)
 <!-- badges: end -->
 
 The `actLifer` package contains functions that create a life table based
