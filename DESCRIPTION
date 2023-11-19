@@ -1,6 +1,6 @@
 Package: actLifer
 Title: Creating Actuarial Life Tables
-Version: 1.0.0
+Version: 1.0.0.9000
 Authors@R: c(
     person(
     given = "Grace", 
